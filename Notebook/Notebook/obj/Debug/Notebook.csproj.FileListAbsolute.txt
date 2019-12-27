@@ -1,0 +1,9 @@
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.pdb
