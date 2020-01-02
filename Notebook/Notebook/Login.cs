@@ -53,7 +53,13 @@ namespace Notebook
 
         private void IngresarButton_Click(object sender, EventArgs e)
         {
-            InformacionEsValida();
+            if(InformacionEsValida() == true) 
+            {
+                MenuForm estanteria = new MenuForm();
+                this.Hide();
+                estanteria.Show();
+            }
+
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -66,6 +72,16 @@ namespace Notebook
             {
                 ContraseñaTextBox.PasswordChar = '*';
             }
+        }
+
+        private void LoginToolTip_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void UsuarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -69,6 +69,7 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(202, 26);
             this.UsuarioTextBox.TabIndex = 2;
+            this.UsuarioTextBox.TextChanged += new System.EventHandler(this.UsuarioTextBox_TextChanged);
             // 
             // ContraseñaTextBox
             // 
@@ -92,6 +93,10 @@
             // LoginErrorProvider
             // 
             this.LoginErrorProvider.ContainerControl = this;
+            // 
+            // LoginToolTip
+            // 
+            this.LoginToolTip.Popup += new System.Windows.Forms.PopupEventHandler(this.LoginToolTip_Popup);
             // 
             // Button
             // 

@@ -7,3 +7,6 @@ C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.Pr
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.exe
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
