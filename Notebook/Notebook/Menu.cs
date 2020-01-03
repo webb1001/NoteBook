@@ -12,6 +12,7 @@ namespace Notebook
 {
     public partial class MenuForm : Form
     {
+        int contador = 0;
         public MenuForm()
         {
             InitializeComponent();
@@ -19,6 +20,11 @@ namespace Notebook
 
         private void crearToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GuardadoForm guardado = new GuardadoForm();
+            if (contador < 9)
+            {
+                guardado.ShowDialog();
+            }   
             EditorDeTexto cuaderno = new EditorDeTexto();
             this.Hide();
             cuaderno.Show();

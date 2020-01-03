@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Notebook.UNA.Cuaderno;
 
 namespace Notebook
 {
@@ -27,8 +28,8 @@ namespace Notebook
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GuardadoForm guardado = new GuardadoForm();
-            guardado.ShowDialog();
+            //GuardadoForm guardado = new GuardadoForm();
+            //if ()guardado.ShowDialog();
         }
 
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)

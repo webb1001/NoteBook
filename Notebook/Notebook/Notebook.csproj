@@ -72,8 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UNA\Modelo\ListaUsuario.cs" />
-    <Compile Include="UNA\Modelo\Usuario.cs" />
+    <Compile Include="UNA\Cuaderno\Cuaderno.cs" />
+    <Compile Include="UNA\Usuario\ListaUsuario.cs" />
+    <Compile Include="UNA\Usuario\Usuario.cs" />
     <EmbeddedResource Include="EditorDeTexto.resx">
       <DependentUpon>EditorDeTexto.cs</DependentUpon>
     </EmbeddedResource>

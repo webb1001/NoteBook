@@ -124,6 +124,7 @@
             // RojoRadioButton
             // 
             this.RojoRadioButton.AutoSize = true;
+            this.RojoRadioButton.Checked = true;
             this.RojoRadioButton.Location = new System.Drawing.Point(28, 35);
             this.RojoRadioButton.Name = "RojoRadioButton";
             this.RojoRadioButton.Size = new System.Drawing.Size(60, 24);
@@ -157,6 +158,7 @@
             this.GuardarButton.TabIndex = 5;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // GuardadoForm
             // 

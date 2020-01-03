@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditorDeTexto));
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edicionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,13 +48,12 @@
             this.eliminarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PaginaRichTextBox = new System.Windows.Forms.RichTextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CopiarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.PegarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BotonesToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -80,12 +81,31 @@
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Image = global::Notebook.Properties.Resources.IGuardar;
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            // 
             // exportarImagenToolStripMenuItem
             // 
+            this.exportarImagenToolStripMenuItem.Image = global::Notebook.Properties.Resources.IExportar;
             this.exportarImagenToolStripMenuItem.Name = "exportarImagenToolStripMenuItem";
             this.exportarImagenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
             this.exportarImagenToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.exportarImagenToolStripMenuItem.Text = "Exportar imagen ";
+            // 
+            // cerrarToolStripMenuItem
+            // 
+            this.cerrarToolStripMenuItem.Image = global::Notebook.Properties.Resources.ICerrar;
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
@@ -119,6 +139,7 @@
             // 
             // atrásToolStripMenuItem
             // 
+            this.atrásToolStripMenuItem.Image = global::Notebook.Properties.Resources.imagesAtras;
             this.atrásToolStripMenuItem.Name = "atrásToolStripMenuItem";
             this.atrásToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
             this.atrásToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
@@ -127,6 +148,7 @@
             // 
             // adelanteToolStripMenuItem
             // 
+            this.adelanteToolStripMenuItem.Image = global::Notebook.Properties.Resources.imagesAdelante;
             this.adelanteToolStripMenuItem.Name = "adelanteToolStripMenuItem";
             this.adelanteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
             this.adelanteToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
@@ -139,6 +161,7 @@
             // 
             // copiarToolStripMenuItem
             // 
+            this.copiarToolStripMenuItem.Image = global::Notebook.Properties.Resources.imagenCopiar;
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
             this.copiarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.copiarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
@@ -147,6 +170,7 @@
             // 
             // pegarToolStripMenuItem
             // 
+            this.pegarToolStripMenuItem.Image = global::Notebook.Properties.Resources.IPegar;
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
             this.pegarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.pegarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
@@ -155,6 +179,7 @@
             // 
             // cortarToolStripMenuItem
             // 
+            this.cortarToolStripMenuItem.Image = global::Notebook.Properties.Resources.ICortar;
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
             this.cortarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.cortarToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
@@ -168,6 +193,7 @@
             // 
             // seleccionarTodoToolStripMenuItem
             // 
+            this.seleccionarTodoToolStripMenuItem.Image = global::Notebook.Properties.Resources.ISelecionarTodo;
             this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
             this.seleccionarTodoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
@@ -176,6 +202,7 @@
             // 
             // eliminarTodoToolStripMenuItem
             // 
+            this.eliminarTodoToolStripMenuItem.Image = global::Notebook.Properties.Resources.IEliminarTodo;
             this.eliminarTodoToolStripMenuItem.Name = "eliminarTodoToolStripMenuItem";
             this.eliminarTodoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.X)));
@@ -185,70 +212,58 @@
             // 
             // PaginaRichTextBox
             // 
-            this.PaginaRichTextBox.Location = new System.Drawing.Point(12, 52);
+            this.PaginaRichTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PaginaRichTextBox.Location = new System.Drawing.Point(0, 80);
             this.PaginaRichTextBox.Name = "PaginaRichTextBox";
             this.PaginaRichTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.PaginaRichTextBox.Size = new System.Drawing.Size(776, 378);
+            this.PaginaRichTextBox.Size = new System.Drawing.Size(800, 370);
             this.PaginaRichTextBox.TabIndex = 1;
             this.PaginaRichTextBox.Text = "";
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
+            this.GuardarToolStripButton,
+            this.CopiarToolStripButton,
+            this.PegarToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // GuardarToolStripButton
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
+            this.GuardarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GuardarToolStripButton.Image = global::Notebook.Properties.Resources.IGuardar;
+            this.GuardarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.GuardarToolStripButton.Text = "toolStripButton1";
+            this.GuardarToolStripButton.ToolTipText = "Guardar";
+            this.GuardarToolStripButton.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
-            // toolStripButton2
+            // CopiarToolStripButton
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
+            this.CopiarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CopiarToolStripButton.Image = global::Notebook.Properties.Resources.imagenCopiar;
+            this.CopiarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CopiarToolStripButton.Name = "CopiarToolStripButton";
+            this.CopiarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.CopiarToolStripButton.Text = "toolStripButton2";
+            this.CopiarToolStripButton.ToolTipText = "Copiar";
+            this.CopiarToolStripButton.Click += new System.EventHandler(this.copiarToolStripMenuItem_Click);
             // 
-            // toolStripButton3
+            // PegarToolStripButton
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
-            // 
-            // guardarToolStripMenuItem
-            // 
-            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.guardarToolStripMenuItem.Text = "Guardar";
-            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
-            // 
-            // cerrarToolStripMenuItem
-            // 
-            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.cerrarToolStripMenuItem.Text = "Cerrar";
-            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
+            this.PegarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.PegarToolStripButton.Image = global::Notebook.Properties.Resources.IPegar;
+            this.PegarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PegarToolStripButton.Name = "PegarToolStripButton";
+            this.PegarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.PegarToolStripButton.Text = "toolStripButton3";
+            this.PegarToolStripButton.ToolTipText = "Pegar";
+            this.PegarToolStripButton.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
             // 
             // EditorDeTexto
             // 
@@ -284,9 +299,9 @@
         private System.Windows.Forms.ToolStripMenuItem edicionToolStripMenuItem;
         private System.Windows.Forms.RichTextBox PaginaRichTextBox;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton GuardarToolStripButton;
+        private System.Windows.Forms.ToolStripButton CopiarToolStripButton;
+        private System.Windows.Forms.ToolStripButton PegarToolStripButton;
         private System.Windows.Forms.ToolStripMenuItem atrásToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adelanteToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog1;
@@ -298,5 +313,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem seleccionarTodoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarTodoToolStripMenuItem;
+        private System.Windows.Forms.ToolTip BotonesToolTip;
     }
 }
