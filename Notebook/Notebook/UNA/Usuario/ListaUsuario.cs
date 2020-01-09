@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +16,24 @@ namespace Notebook.UNA.Usuario
         public List<Usuario> Consultar()
         {
             return listaUsuarios;
+        }
+
+        public bool Verificar(string usuario, string contraseña)
+        {
+            bool encontrado = false;
+            int i = 0;
+            while (encontrado == false && i < listaUsuarios.Count)
+            {
+                if (listaUsuarios[i].NombreUsuario == usuario && listaUsuarios[i].Contraseña == contraseña)
+                {
+                    encontrado = true;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return encontrado;
         }
     }
 }

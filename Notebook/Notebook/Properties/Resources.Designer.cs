@@ -73,6 +73,56 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CuA {
+            get {
+                object obj = ResourceManager.GetObject("CuA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CuAM {
+            get {
+                object obj = ResourceManager.GetObject("CuAM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CuC {
+            get {
+                object obj = ResourceManager.GetObject("CuC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CuR {
+            get {
+                object obj = ResourceManager.GetObject("CuR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CuV {
+            get {
+                object obj = ResourceManager.GetObject("CuV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estanteriaVacia {
             get {
                 object obj = ResourceManager.GetObject("estanteriaVacia", resourceCulture);
@@ -173,6 +223,16 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImagenLogin {
+            get {
+                object obj = ResourceManager.GetObject("ImagenLogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -227,6 +287,16 @@ namespace Notebook.Properties {
             get {
                 object obj = ResourceManager.GetObject("kisspng-computer-icons-user-login-desktop-wallpaper-5b37c6125469e5.93930291153038" +
                         "18423458", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_image {
+            get {
+                object obj = ResourceManager.GetObject("png image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

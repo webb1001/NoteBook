@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Notebook.UNA.Usuario;
 
 namespace Notebook
 {
     public partial class LoginForm : Form
     {
+        ListaUsuario listaCuentas = new ListaUsuario();
+        Usuario persona1 = new Usuario("Alejandro", "primo861", "88213061");
+        Usuario persona2 = new Usuario("Christopher", "webb", "86814065");
+        Usuario persona3 = new Usuario("SinNombre", "profe", "twice");
         public LoginForm()
         {
             InitializeComponent();
@@ -19,10 +24,14 @@ namespace Notebook
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            listaCuentas.Agregar(persona1);
+            listaCuentas.Agregar(persona2);
+            listaCuentas.Agregar(persona3);
             UsuarioLabel.BackColor = Color.Transparent;
             ContraseñaLabel.BackColor = Color.Transparent;
             LoginToolTip.SetToolTip(UsuarioTextBox, "Ingresar el nombre de usuario");
             LoginToolTip.SetToolTip(ContraseñaTextBox, "Ingresar una contraseña de minimo 5 caracteres");
+
         }
         private bool InformacionEsValida()
         {
@@ -55,9 +64,16 @@ namespace Notebook
         {
             if(InformacionEsValida() == true) 
             {
-                MenuForm estanteria = new MenuForm();
-                this.Hide();
-                estanteria.Show();
+                if(listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true )
+                {
+                    MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
+                    this.Hide();
+                    estanteria.Show();
+                }
+                else
+                {
+                    MessageBox.Show("El usuario y la contraseña no coinciden...");
+                }
             }
 
         }
@@ -82,6 +98,26 @@ namespace Notebook
         private void UsuarioTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ContraseñaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (InformacionEsValida() == true)
+                {
+                    if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
+                    {
+                        MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
+                        this.Hide();
+                        estanteria.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario y la contraseña no coinciden...");
+                    }
+                }
+            }
         }
     }
 }

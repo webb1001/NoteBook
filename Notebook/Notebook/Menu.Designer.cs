@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.EstanteriaPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,13 +36,15 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // EstanteriaPanel
             // 
-            this.panel1.BackgroundImage = global::Notebook.Properties.Resources.estanteriaVacia;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(797, 653);
-            this.panel1.TabIndex = 0;
+            this.EstanteriaPanel.BackgroundImage = global::Notebook.Properties.Resources.estanteriaVacia;
+            this.EstanteriaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EstanteriaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EstanteriaPanel.Location = new System.Drawing.Point(0, 24);
+            this.EstanteriaPanel.Name = "EstanteriaPanel";
+            this.EstanteriaPanel.Size = new System.Drawing.Size(552, 449);
+            this.EstanteriaPanel.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -52,9 +54,10 @@
             this.eliminarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(797, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(552, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // crearToolStripMenuItem
             // 
@@ -79,15 +82,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(797, 675);
-            this.Controls.Add(this.panel1);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(552, 473);
+            this.Controls.Add(this.EstanteriaPanel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cuadernos";
+            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -97,7 +101,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel EstanteriaPanel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;

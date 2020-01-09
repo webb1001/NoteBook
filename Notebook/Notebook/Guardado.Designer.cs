@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NombreLabel = new System.Windows.Forms.Label();
             this.CategoriaLabel = new System.Windows.Forms.Label();
             this.ColoresGroupBox = new System.Windows.Forms.GroupBox();
@@ -39,14 +40,18 @@
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.CategoriaTextBox = new System.Windows.Forms.TextBox();
             this.GuardarButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.GuardadoToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.GuardadoErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ColoresGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GuardadoErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // NombreLabel
             // 
             this.NombreLabel.AutoSize = true;
             this.NombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreLabel.Location = new System.Drawing.Point(50, 36);
+            this.NombreLabel.Location = new System.Drawing.Point(106, 21);
             this.NombreLabel.Name = "NombreLabel";
             this.NombreLabel.Size = new System.Drawing.Size(69, 20);
             this.NombreLabel.TabIndex = 0;
@@ -56,7 +61,7 @@
             // 
             this.CategoriaLabel.AutoSize = true;
             this.CategoriaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoriaLabel.Location = new System.Drawing.Point(50, 80);
+            this.CategoriaLabel.Location = new System.Drawing.Point(106, 87);
             this.CategoriaLabel.Name = "CategoriaLabel";
             this.CategoriaLabel.Size = new System.Drawing.Size(82, 20);
             this.CategoriaLabel.TabIndex = 1;
@@ -70,7 +75,7 @@
             this.ColoresGroupBox.Controls.Add(this.VerdeRadioButton);
             this.ColoresGroupBox.Controls.Add(this.RojoRadioButton);
             this.ColoresGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColoresGroupBox.Location = new System.Drawing.Point(44, 127);
+            this.ColoresGroupBox.Location = new System.Drawing.Point(47, 161);
             this.ColoresGroupBox.Name = "ColoresGroupBox";
             this.ColoresGroupBox.Size = new System.Drawing.Size(193, 193);
             this.ColoresGroupBox.TabIndex = 2;
@@ -136,7 +141,7 @@
             // NombreTextBox
             // 
             this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreTextBox.Location = new System.Drawing.Point(137, 38);
+            this.NombreTextBox.Location = new System.Drawing.Point(47, 44);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(185, 26);
             this.NombreTextBox.TabIndex = 3;
@@ -144,7 +149,7 @@
             // CategoriaTextBox
             // 
             this.CategoriaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoriaTextBox.Location = new System.Drawing.Point(137, 77);
+            this.CategoriaTextBox.Location = new System.Drawing.Point(47, 110);
             this.CategoriaTextBox.Name = "CategoriaTextBox";
             this.CategoriaTextBox.Size = new System.Drawing.Size(185, 26);
             this.CategoriaTextBox.TabIndex = 4;
@@ -152,7 +157,7 @@
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Location = new System.Drawing.Point(146, 326);
+            this.GuardarButton.Location = new System.Drawing.Point(170, 399);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 34);
             this.GuardarButton.TabIndex = 5;
@@ -160,11 +165,28 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 399);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 34);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // GuardadoErrorProvider
+            // 
+            this.GuardadoErrorProvider.ContainerControl = this;
+            // 
             // GuardadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 372);
+            this.BackgroundImage = global::Notebook.Properties.Resources.CuV;
+            this.ClientSize = new System.Drawing.Size(282, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.CategoriaTextBox);
             this.Controls.Add(this.NombreTextBox);
@@ -175,8 +197,10 @@
             this.Name = "GuardadoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guardado";
+            this.Load += new System.EventHandler(this.GuardadoForm_Load);
             this.ColoresGroupBox.ResumeLayout(false);
             this.ColoresGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GuardadoErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +219,8 @@
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.TextBox CategoriaTextBox;
         private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip GuardadoToolTip;
+        private System.Windows.Forms.ErrorProvider GuardadoErrorProvider;
     }
 }

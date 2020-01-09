@@ -142,6 +142,12 @@
   <data name="imagesAtras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\imagesAtras.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ImagenLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\ImagenLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IEliminarTodo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\IEliminarTodo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,6 +166,9 @@
   <data name="kisspng-computer-icons-user-login-desktop-wallpaper-5b37c6125469e5.9393029115303818423458" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-computer-icons-user-login-desktop-wallpaper-5b37c6125469e5.9393029115303818423458.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imagenCopiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\imagenCopiar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ICerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\ICerrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,7 +178,19 @@
   <data name="IPegar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\Imagenes\IPegar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imagenCopiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Imagenes\imagenCopiar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CuA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\CuA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\CuAM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\CuC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\CuR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Imagenes\CuV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

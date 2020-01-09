@@ -7,45 +7,106 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Notebook.UNA.Cuaderno;
+using System.IO;
 
 namespace Notebook
 {
     public partial class GuardadoForm : Form
     {
-        public Cuaderno Cuaderno1;
-        public GuardadoForm()
+        StreamWriter escritor;
+        StreamReader lector;
+        string cadena;
+        string nombreUsuario = "";
+        string[] campos = new string[47];
+        char[] separador = { '°' };
+        public GuardadoForm(string nombreUsuario)
         {
             InitializeComponent();
+            this.nombreUsuario = nombreUsuario;
+        }
+
+        public void SobreescribirArchivo()
+        {
+            LeerArchivo();
+            File.Delete(nombreUsuario + ".txt");
+            StreamWriter escritor = new StreamWriter(nombreUsuario + ".txt");
+            int aux = Convert.ToInt32(campos[1]);
+            aux++;
+            campos[1] = Convert.ToString(aux);
+            for (int i = 0; i < campos.Length; i++)
+            {
+                campos[i] = campos[i] + "°";
+                escritor.WriteLine(campos[i]);
+            }
+            escritor.Close();
+        }
+
+        public void LeerArchivo()
+        {
+            try
+            {
+                lector = File.OpenText(nombreUsuario + ".txt");
+                cadena = lector.ReadToEnd();
+                campos = cadena.Split(separador);
+                lector.Close();
+            }
+            catch (FileNotFoundException fe)
+            {
+                MessageBox.Show("Error" + fe.Message);
+            }
+            catch (Exception en)
+            {
+                MessageBox.Show("Error" + en.Message);
+            }
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            Cuaderno1 = new Cuaderno();
-            Cuaderno1.Crear(NombreTextBox.Text, CategoriaTextBox.Text, IdentificarColor());
+            LeerArchivo();
+            SobreescribirArchivo();
+            escritor = File.AppendText(nombreUsuario + ".txt");
+            escritor.Write(NombreTextBox.Text + "°");
+            escritor.Write(CategoriaTextBox.Text + "°");
+            escritor.Write(IdentificarColor() + "°");
+            escritor.Close();
+            this.Hide();
+            EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario);
+            cuaderno.Show();
         }
-        public int IdentificarColor()
+        public string IdentificarColor()
         {
             if (VerdeRadioButton.Checked == true)
             {
-                return 2;
+                return "Verde";
             }
             else if (AzulRadioButton.Checked == true)
             {
-                return 3;
+                return "Azul";
             }
             else if (AmarilloRadioButton.Checked == true)
             {
-                return 4;
+                return "Amarillo";
             }
             else if (CafeRadioButton.Checked == true)
             {
-                return 5;
+                return "Cafe";
             }
             else 
             {
-                return 1;
+                return "Rojo";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuForm menu = new MenuForm(nombreUsuario);
+            menu.Show();
+        }
+
+        private void GuardadoForm_Load(object sender, EventArgs e)
+        {
+            LeerArchivo();
         }
     }
 }

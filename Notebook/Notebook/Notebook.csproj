@@ -72,7 +72,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UNA\Cuaderno\Cuaderno.cs" />
     <Compile Include="UNA\Usuario\ListaUsuario.cs" />
     <Compile Include="UNA\Usuario\Usuario.cs" />
     <EmbeddedResource Include="EditorDeTexto.resx">
@@ -163,6 +162,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\imagenCopiar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\ImagenLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\CuA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\CuAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\CuC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\CuR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\CuV.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
