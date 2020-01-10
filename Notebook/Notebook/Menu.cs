@@ -8,32 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+
 namespace Notebook
 {
     public partial class MenuForm : Form
     {
-        //   int x = 0;
-        //   int y = 0;
-        StreamReader lector;
-        string cadena;
-        string[] campos = new string[47];
-        string nombreUsuario = "";
-        char[] separador = { '°' };
-
+        StreamReader lector;        //Permite leer los .txt
+        string cadena;      //Se usa para almacenar el contenido del .txt
+        string[] campos = new string[47];       //Mediante el caracter " ° " separa el contenido de cadena 
+        string nombreUsuario = "";      //Almacena el nombre de usuario
+        char[] separador = { '°' };     //Almacena el caracter usado como separador
         public MenuForm()
         {
             InitializeComponent();
         }
-        public void LeerArchivo()
+        public void LeerArchivo()       //Permite leer todo el archivo .txt del usuario y otorga datos a las variables
         {
             try
             {
-                lector = File.OpenText(nombreUsuario + ".txt");
-                cadena = lector.ReadToEnd();
-                campos = cadena.Split(separador);
-                lector.Close();
+                lector = File.OpenText(nombreUsuario + ".txt");     //Abre el archivo .txt
+                cadena = lector.ReadToEnd();        //Lee todo el archivo .txt
+                campos = cadena.Split(separador);       //Divide a cadena mediante el separador y lo almacena en campos
+                lector.Close();     //Cierra la lectura del archivo 
             }
-            catch (FileNotFoundException fe)
+            catch (FileNotFoundException fe)        //Muestra un mensaje en caso de error
             {
                 MessageBox.Show("Error" + fe.Message);
             }
@@ -42,73 +40,58 @@ namespace Notebook
                 MessageBox.Show("Error" + en.Message);
             }
         }
-
         public MenuForm(string nombreUsuario)
         {
-            this.nombreUsuario = nombreUsuario;
+            this.nombreUsuario = nombreUsuario; 
             InitializeComponent();
         }
-
-        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)       //Verifica que haya espacio para almacenar cuadernos y en ese caso los crea o no 
         {
-            LeerArchivo();
-            if (Convert.ToInt32(campos[1].Trim()) == 9)
+            LeerArchivo();      //Actualiza los valores de las variables
+            if (Convert.ToInt32(campos[1].Trim()) == 9)     //Verifica que se pueda crear un nuevo cuaderno
             {
                 MessageBox.Show("Ya alcanzó su limite de cuadernos, elimine un cuaderno si desea crear uno nuevo.", "ERROR", MessageBoxButtons.OK);
             }
             else
             {
-                GuardadoForm guardado = new GuardadoForm(nombreUsuario);
-                guardado.Show();
-                this.Hide();
+                CrearForm guardado = new CrearForm(nombreUsuario);        //Genera el formulario de creacion de cuadernos 
+                guardado.Show();        //Muestra el formularios de creacion de cuadernos
+                this.Hide();        //Esconde el formulario actual
             }
-            //campos[1] = Convert.ToString();
         }
-
-        private void Guardado_pasado(string nombre, string categoria, string color)
+        private void MenuForm_Load(object sender, EventArgs e)      //Cara el formulario
         {
-            throw new NotImplementedException();
+            LeerArchivo();      //Actualiza las variables relacionadas al .txt
+            DibujarCategoria();     //Dibija etiquetas con las categorias de los cuadernos
+            DibujarCuadernos();     //Dibuja cuadernos con sus respectivos nombres
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void MenuForm_Load(object sender, EventArgs e)
+        public Image ColorCuaderno(int i)       //Especifica la caracteristica color de los cuadernos
         {
             LeerArchivo();
-            DibujarCategoria();
-            DibujarCuadernos();
-        }
-
-        public Image ColorCuaderno(int i)
-        {
-            LeerArchivo();
-            Image imagen;
+            Image imagen;       //Genera un objeto de tipo imagen
             if (campos[i * 4 + 4].Trim().ToString() == "Rojo")
             {
-                imagen = Image.FromFile("CuR.png");
+                imagen = Image.FromFile("CuR.png");     //Si su caracteristica color coincide con "Rojo"
             }
             else if (campos[i * 4 + 4].Trim().ToString() == "Azul")
             {
-                imagen = Image.FromFile("CuA.png");
+                imagen = Image.FromFile("CuA.png");     //Si su caracteristica color coincide con "Azul"
             }
             else if (campos[i * 4 + 4].Trim().ToString() == "Amarillo")
             {
-                imagen = Image.FromFile("CuAM.png");
+                imagen = Image.FromFile("CuAM.png");        //Si su caracteristica color coincide con "Amarillo"
             }
             else if (campos[i * 4 + 4].Trim().ToString() == "Cafe")
             {
-                imagen = Image.FromFile("CuC.png");
+                imagen = Image.FromFile("CuC.png");     //Si su caracteristica color coincide con "Cafe"
             }
             else
             {
-                imagen = Image.FromFile("CuV.png");
+                imagen = Image.FromFile("CuV.png");     //Si su caracteristica color coincide con "Verde"
             }
-            return imagen;
+            return imagen;      //Se retorna la imagen con el color adquirido
         }
-        public void DibujarCuadernos()
+        public void DibujarCuadernos()      //Metodo que dibuja los cuadernos que posee el usuario 
         {
             LeerArchivo();
             Image cuadernoImagen;
@@ -144,56 +127,64 @@ namespace Notebook
                 }
             }
         }
-        private void handlerComun_Click(object sender, EventArgs e)
+        private void handlerComun_Click(object sender, EventArgs e)     //Metodo que permite usar el evento click en todos los cuadernos creados
         {
-            //cerrar
-            if(((Label)sender).Name == "CuadernoLabel1")
+            if(((Label)sender).Name == "CuadernoLabel1")        //Si se hace click en el cuaderno 1, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 1);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 1);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel2")
+            if (((Label)sender).Name == "CuadernoLabel2")       //Si se hace click en el cuaderno 2, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 2);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 2);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel3")
+            if (((Label)sender).Name == "CuadernoLabel3")       //Si se hace click en el cuaderno 3, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 3);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 3);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel4")
+            if (((Label)sender).Name == "CuadernoLabel4")       //Si se hace click en el cuaderno 4, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 4);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 4);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel5")
+            if (((Label)sender).Name == "CuadernoLabel5")       //Si se hace click en el cuaderno 5, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 5);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 5);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel6")
+            if (((Label)sender).Name == "CuadernoLabel6")       //Si se hace click en el cuaderno 6, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 6);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 6);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel7")
+            if (((Label)sender).Name == "CuadernoLabel7")       //Si se hace click en el cuaderno 7, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 7);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 7);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel8")
+            if (((Label)sender).Name == "CuadernoLabel8")       //Si se hace click en el cuaderno 8, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 8);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 8);
                 cuaderno.Show();
+                this.Hide();
             }
-            if (((Label)sender).Name == "CuadernoLabel9")
+            if (((Label)sender).Name == "CuadernoLabel9")       //Si se hace click en el cuaderno 9, abre su contenido
             {
-                EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario, 9);
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 9);
                 cuaderno.Show();
+                this.Hide();
             }
         }
-        public void DibujarCategoria()
+        public void DibujarCategoria()      //Metodo que dibuja las etiquetas de los cuadernos que poseen los usuarios
         {
             LeerArchivo();
             int x = 75;
@@ -208,7 +199,7 @@ namespace Notebook
                     etiqueta.Text = campos[i * 4 + 3].Trim();
                     etiqueta.Left = x;
                     etiqueta.Top = y;
-
+                    etiqueta.BackColor = Color.Transparent;
                     EstanteriaPanel.Controls.Add(etiqueta);
                     x += 150;
                     aux++;
@@ -218,8 +209,17 @@ namespace Notebook
                         x = 75;
                     }
                 }
+            }           
+        }
+        private void CerrarSesioButton_Click(object sender, EventArgs e)        //Permite cambiar de usuario o simplemente cerrar sesion
+        {
+            DialogResult cerrar = MessageBox.Show("¿Desea cerrar sesion?", "Confirmación", MessageBoxButtons.YesNo);
+            if (cerrar == DialogResult.Yes)
+            {
+                this.Dispose();
+                LoginForm login = new LoginForm();
+                login.Show();
             }
-            
         }
     }
 }

@@ -70,3 +70,15 @@ C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.Propert
 C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
 C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.exe
 C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.EditorDeNotas.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.CrearForm.resources

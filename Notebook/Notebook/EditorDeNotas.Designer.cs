@@ -1,6 +1,6 @@
 ﻿namespace Notebook
 {
-    partial class EditorDeTexto
+    partial class EditorDeNotas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.EditorMenuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,24 +54,24 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.BotonesToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.menuStrip1.SuspendLayout();
+            this.EditorMenuStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // EditorMenuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.EditorMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.EditorMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.colorToolStripMenuItem,
             this.formatoToolStripMenuItem,
             this.edicionToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.EditorMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.EditorMenuStrip.Name = "EditorMenuStrip";
+            this.EditorMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.EditorMenuStrip.Size = new System.Drawing.Size(800, 24);
+            this.EditorMenuStrip.TabIndex = 0;
+            this.EditorMenuStrip.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
@@ -268,22 +268,22 @@
             this.PegarToolStripButton.ToolTipText = "Pegar";
             this.PegarToolStripButton.Click += new System.EventHandler(this.pegarToolStripMenuItem_Click);
             // 
-            // EditorDeTexto
+            // EditorDeNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.PaginaRichTextBox);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.EditorMenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "EditorDeTexto";
+            this.MainMenuStrip = this.EditorMenuStrip;
+            this.Name = "EditorDeNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditorDeTexto";
-            this.Load += new System.EventHandler(this.EditorDeTexto_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.EditorDeNotas_Load);
+            this.EditorMenuStrip.ResumeLayout(false);
+            this.EditorMenuStrip.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -293,7 +293,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip EditorMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarImagenToolStripMenuItem;

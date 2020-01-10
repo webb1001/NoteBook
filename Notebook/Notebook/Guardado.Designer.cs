@@ -1,6 +1,6 @@
 ﻿namespace Notebook
 {
-    partial class GuardadoForm
+    partial class CrearForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.CategoriaTextBox = new System.Windows.Forms.TextBox();
             this.GuardarButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CancelarButton = new System.Windows.Forms.Button();
             this.GuardadoToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.GuardadoErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ColoresGroupBox.SuspendLayout();
@@ -50,6 +50,7 @@
             // NombreLabel
             // 
             this.NombreLabel.AutoSize = true;
+            this.NombreLabel.BackColor = System.Drawing.Color.Transparent;
             this.NombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NombreLabel.Location = new System.Drawing.Point(106, 21);
             this.NombreLabel.Name = "NombreLabel";
@@ -60,6 +61,7 @@
             // CategoriaLabel
             // 
             this.CategoriaLabel.AutoSize = true;
+            this.CategoriaLabel.BackColor = System.Drawing.Color.Transparent;
             this.CategoriaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CategoriaLabel.Location = new System.Drawing.Point(106, 87);
             this.CategoriaLabel.Name = "CategoriaLabel";
@@ -69,6 +71,7 @@
             // 
             // ColoresGroupBox
             // 
+            this.ColoresGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.ColoresGroupBox.Controls.Add(this.CafeRadioButton);
             this.ColoresGroupBox.Controls.Add(this.AmarilloRadioButton);
             this.ColoresGroupBox.Controls.Add(this.AzulRadioButton);
@@ -165,28 +168,29 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // button1
+            // CancelarButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 34);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.Location = new System.Drawing.Point(12, 399);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(100, 34);
+            this.CancelarButton.TabIndex = 6;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // GuardadoErrorProvider
             // 
             this.GuardadoErrorProvider.ContainerControl = this;
             // 
-            // GuardadoForm
+            // CrearForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Notebook.Properties.Resources.CuV;
-            this.ClientSize = new System.Drawing.Size(282, 461);
-            this.Controls.Add(this.button1);
+            this.BackgroundImage = global::Notebook.Properties.Resources.FondoLibros;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.CategoriaTextBox);
             this.Controls.Add(this.NombreTextBox);
@@ -194,9 +198,9 @@
             this.Controls.Add(this.CategoriaLabel);
             this.Controls.Add(this.NombreLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "GuardadoForm";
+            this.Name = "CrearForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Guardado";
+            this.Text = "Creacion de cuadernos";
             this.Load += new System.EventHandler(this.GuardadoForm_Load);
             this.ColoresGroupBox.ResumeLayout(false);
             this.ColoresGroupBox.PerformLayout();
@@ -219,7 +223,7 @@
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.TextBox CategoriaTextBox;
         private System.Windows.Forms.Button GuardarButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.ToolTip GuardadoToolTip;
         private System.Windows.Forms.ErrorProvider GuardadoErrorProvider;
     }

@@ -133,6 +133,16 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondoLibros {
+            get {
+                object obj = ResourceManager.GetObject("FondoLibros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IAtras {
             get {
                 object obj = ResourceManager.GetObject("IAtras", resourceCulture);

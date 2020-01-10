@@ -11,37 +11,35 @@ using System.IO;
 
 namespace Notebook
 {
-    public partial class GuardadoForm : Form
+    public partial class CrearForm : Form
     {
-        StreamWriter escritor;
-        StreamReader lector;
-        string cadena;
-        string nombreUsuario = "";
-        string[] campos = new string[47];
-        char[] separador = { '°' };
-        public GuardadoForm(string nombreUsuario)
+        StreamWriter escritor;      //Permite escribir en los .txt
+        StreamReader lector;        //Permite leer los .txt
+        string cadena;      //Se usa para almacenar el contenido del .txt
+        string nombreUsuario = "";      //Almacena el nombre de usuario
+        string[] campos = new string[47];        //Mediante el caracter " ° " separa el contenido de cadena
+        char[] separador = { '°' };     //Almacena el caracter usado como separador
+        public CrearForm(string nombreUsuario)
         {
             InitializeComponent();
             this.nombreUsuario = nombreUsuario;
         }
-
-        public void SobreescribirArchivo()
+        public void SobreescribirArchivo()      //Se reescribe el archivo para almacenar su contenido
         {
             LeerArchivo();
-            File.Delete(nombreUsuario + ".txt");
-            StreamWriter escritor = new StreamWriter(nombreUsuario + ".txt");
-            int aux = Convert.ToInt32(campos[1]);
-            aux++;
-            campos[1] = Convert.ToString(aux);
-            for (int i = 0; i < campos.Length; i++)
+            File.Delete(nombreUsuario + ".txt");        //Elimina el contenido del archivo
+            StreamWriter escritor = new StreamWriter(nombreUsuario + ".txt");       //Permite escribir en el .txt
+            int aux = Convert.ToInt32(campos[1]);       //Recibe la cantidad de cuadernos creados
+            aux++;      //Se aumenta cantidad de cuadernos creados
+            campos[1] = Convert.ToString(aux);      //Actualiza la cantidad de cuadernos creados
+            for (int i = 0; i < campos.Length; i++)     //Reescribe todo el contenido del .txt
             {
                 campos[i] = campos[i] + "°";
                 escritor.WriteLine(campos[i]);
             }
-            escritor.Close();
+            escritor.Close();       //Cierra el escritor de archivos 
         }
-
-        public void LeerArchivo()
+        public void LeerArchivo()       //Permite leer todo el archivo .txt del usuario y otorga datos a las variables
         {
             try
             {
@@ -59,22 +57,24 @@ namespace Notebook
                 MessageBox.Show("Error" + en.Message);
             }
         }
-
-        private void GuardarButton_Click(object sender, EventArgs e)
+        private void GuardarButton_Click(object sender, EventArgs e)        //Crea un cuadernos con los datos agregados por el usuario
         {
-            LeerArchivo();
-            SobreescribirArchivo();
-            escritor = File.AppendText(nombreUsuario + ".txt");
-            escritor.Write(NombreTextBox.Text + "°");
-            escritor.Write(CategoriaTextBox.Text + "°");
-            escritor.Write(IdentificarColor() + "°");
-            escritor.Close();
-            this.Hide();
-            EditorDeTexto cuaderno = new EditorDeTexto(nombreUsuario);
-            cuaderno.Show();
+            if (InformacionEsValida() == true)      //Verifica que todos los datos solicitados hayan sido ingresados
+            {
+                LeerArchivo();
+                SobreescribirArchivo();     //Actualiza el contador de cuadernos creados
+                escritor = File.AppendText(nombreUsuario + ".txt");
+                escritor.Write(NombreTextBox.Text + "°");       //Agrega el nombre de cuaderno creado
+                escritor.Write(CategoriaTextBox.Text + "°");        //Agrega la categoria al cuaderno creado
+                escritor.Write(IdentificarColor() + "°");       //Agrega un color al cuaderno creado
+                escritor.Close();       //Cierra el escritor de archivos
+                this.Hide();
+                EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario);      //Abre el formulario de notas
+                cuaderno.Show();
+            }
         }
-        public string IdentificarColor()
-        {
+        public string IdentificarColor()        //Permite la seleccion de colores para los cuadernos que se van a crear
+        {                                       //verificando que RadioButton fue seleccionado
             if (VerdeRadioButton.Checked == true)
             {
                 return "Verde";
@@ -96,17 +96,38 @@ namespace Notebook
                 return "Rojo";
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void CancelarButton_Click(object sender, EventArgs e)      //Cancela la creacion de cuadernos
         {
             this.Hide();
             MenuForm menu = new MenuForm(nombreUsuario);
             menu.Show();
         }
-
         private void GuardadoForm_Load(object sender, EventArgs e)
         {
             LeerArchivo();
+            GuardadoToolTip.SetToolTip(NombreTextBox, "Ingresar un nombre para el cuaderno");   //Otorga instrucciones para el usuario
+            GuardadoToolTip.SetToolTip(CategoriaTextBox, "Ingresar una categoria para el cuaderno");    //Otorga instrucciones para el usuario
+        }
+        private bool InformacionEsValida()      //Verifica que todos los textbox contengan informacion
+        {
+            LimpiarErrorProvider();
+            bool esValida = true;
+            if (NombreTextBox.Text == "")
+            {
+                esValida = false;
+                GuardadoErrorProvider.SetError(NombreTextBox, "Debe especificar un nombre para el cuaderno");
+            }
+            if (CategoriaTextBox.Text == "")
+            {
+                esValida = false;
+                GuardadoErrorProvider.SetError(CategoriaTextBox, "Debe especificar una categoria para el cuaderno");
+            }
+            return esValida;
+        }
+        private void LimpiarErrorProvider()     //Limpia el errorProvider de los textBox
+        {
+            GuardadoErrorProvider.SetError(NombreTextBox, "");
+            GuardadoErrorProvider.SetError(CategoriaTextBox, "");
         }
     }
 }

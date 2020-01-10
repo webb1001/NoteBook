@@ -14,35 +14,31 @@ namespace Notebook
     public partial class LoginForm : Form
     {
         ListaUsuario listaCuentas = new ListaUsuario();
-        Usuario persona1 = new Usuario("Alejandro", "primo861", "88213061");
+        Usuario persona1 = new Usuario("Alejandro", "primo861", "88213061");        //Se inicializan los usuarios ya que no ha una base de datos
         Usuario persona2 = new Usuario("Christopher", "webb", "86814065");
-        Usuario persona3 = new Usuario("SinNombre", "profe", "twice");
+        Usuario persona3 = new Usuario("Ruben", "rmoravargas", "profe");
         public LoginForm()
         {
-            InitializeComponent();
+            InitializeComponent();      //Inicia graficamente los componentes del form
         }
-
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            listaCuentas.Agregar(persona1);
+            listaCuentas.Agregar(persona1);     //Se agregan los usuarios a la lista de usuarios
             listaCuentas.Agregar(persona2);
             listaCuentas.Agregar(persona3);
-            UsuarioLabel.BackColor = Color.Transparent;
-            ContraseñaLabel.BackColor = Color.Transparent;
-            LoginToolTip.SetToolTip(UsuarioTextBox, "Ingresar el nombre de usuario");
+            LoginToolTip.SetToolTip(UsuarioTextBox, "Ingresar el nombre de usuario");       //Se inicializan ambos toolTips para dar informacion al usuario
             LoginToolTip.SetToolTip(ContraseñaTextBox, "Ingresar una contraseña de minimo 5 caracteres");
-
         }
-        private bool InformacionEsValida()
+        private bool InformacionEsValida()      //Verifica que todos los textbox contengan informacion 
         {
-            LimpiarErrorProvider();
-            bool esValida = true;
-            if(UsuarioTextBox.Text == "")
+            LimpiarErrorProvider();     //Limpia los errorProvider
+            bool esValida = true;       //Verifica errores
+            if (UsuarioTextBox.Text == "")
             {
                 esValida = false;
                 LoginErrorProvider.SetError(UsuarioTextBox, "Debe especificar su nombre de usuario");
             }
-            if(ContraseñaTextBox.Text == "")
+            if (ContraseñaTextBox.Text == "")
             {
                 esValida = false;
                 LoginErrorProvider.SetError(ContraseñaTextBox, "Debe escribir su contraseña");
@@ -54,17 +50,16 @@ namespace Notebook
             }
             return esValida;
         }
-        private void LimpiarErrorProvider()
+        private void LimpiarErrorProvider()     //Limpia el errorProvider de los textBox
         {
             LoginErrorProvider.SetError(UsuarioTextBox, "");
             LoginErrorProvider.SetError(ContraseñaTextBox, "");
         }
-
-        private void IngresarButton_Click(object sender, EventArgs e)
+        private void IngresarButton_Click(object sender, EventArgs e)       //Si la informacion es valida permite el acceso a la aplicacion
         {
-            if(InformacionEsValida() == true) 
+            if (InformacionEsValida() == true)
             {
-                if(listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true )
+                if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
                 {
                     MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
                     this.Hide();
@@ -77,38 +72,26 @@ namespace Notebook
             }
 
         }
-
-        private void Button_Click(object sender, EventArgs e)
+        private void VisibleButton_Click(object sender, EventArgs e)        //Permite visualizar la contraseña
         {
-            if(ContraseñaTextBox.PasswordChar == '*')
+            if (ContraseñaTextBox.PasswordChar == '*')
             {
                 ContraseñaTextBox.PasswordChar = '\0';
             }
-            else if(ContraseñaTextBox.PasswordChar == '\0')
+            else if (ContraseñaTextBox.PasswordChar == '\0')
             {
                 ContraseñaTextBox.PasswordChar = '*';
             }
         }
-
-        private void LoginToolTip_Popup(object sender, PopupEventArgs e)
+        private void ContraseñaTextBox_KeyPress(object sender, KeyPressEventArgs e)     //Permite usar la tecla Enter como atajo
         {
-
-        }
-
-        private void UsuarioTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContraseñaTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 if (InformacionEsValida() == true)
                 {
                     if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
                     {
-                        MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
+                        MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);        //Se abre el menu y se recibe el nombre del usuario que accedió
                         this.Hide();
                         estanteria.Show();
                     }
@@ -118,6 +101,10 @@ namespace Notebook
                     }
                 }
             }
+        }
+        private void SalirButton_Click(object sender, EventArgs e)      //Cierra la aplicacion
+        {
+            Application.Exit();
         }
     }
 }

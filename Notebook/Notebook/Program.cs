@@ -17,11 +17,6 @@ namespace Notebook.UNA.Usuario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
-            Usuario Persona1 = new Usuario("Alejandro","Primo2K20","cacademono");
-            Usuario Persona2 = new Usuario("Christopher", "Webb2K20", "cacadeperro");
-            Usuario Persona3 = new Usuario("Profe", "Profe", "Profe");
-
-
         }
     }
 }
