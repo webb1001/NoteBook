@@ -36,8 +36,9 @@
             this.IngresarButton = new System.Windows.Forms.Button();
             this.LoginErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.LoginToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.Button = new System.Windows.Forms.Button();
+            this.VisibleButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SalirButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoginErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // UsuarioLabel
             // 
             this.UsuarioLabel.AutoSize = true;
+            this.UsuarioLabel.BackColor = System.Drawing.Color.Transparent;
             this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioLabel.Location = new System.Drawing.Point(254, 207);
             this.UsuarioLabel.Name = "UsuarioLabel";
@@ -55,6 +57,7 @@
             // ContraseñaLabel
             // 
             this.ContraseñaLabel.AutoSize = true;
+            this.ContraseñaLabel.BackColor = System.Drawing.Color.Transparent;
             this.ContraseñaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContraseñaLabel.Location = new System.Drawing.Point(226, 239);
             this.ContraseñaLabel.Name = "ContraseñaLabel";
@@ -69,6 +72,7 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(202, 26);
             this.UsuarioTextBox.TabIndex = 2;
+            this.UsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContraseñaTextBox_KeyPress);
             // 
             // ContraseñaTextBox
             // 
@@ -78,10 +82,11 @@
             this.ContraseñaTextBox.PasswordChar = '*';
             this.ContraseñaTextBox.Size = new System.Drawing.Size(202, 26);
             this.ContraseñaTextBox.TabIndex = 3;
+            this.ContraseñaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContraseñaTextBox_KeyPress);
             // 
             // IngresarButton
             // 
-            this.IngresarButton.Location = new System.Drawing.Point(351, 291);
+            this.IngresarButton.Location = new System.Drawing.Point(415, 298);
             this.IngresarButton.Name = "IngresarButton";
             this.IngresarButton.Size = new System.Drawing.Size(96, 34);
             this.IngresarButton.TabIndex = 4;
@@ -93,28 +98,37 @@
             // 
             this.LoginErrorProvider.ContainerControl = this;
             // 
-            // Button
+            // VisibleButton
             // 
-            this.Button.BackgroundImage = global::Notebook.Properties.Resources.images;
-            this.Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Button.Location = new System.Drawing.Point(505, 236);
-            this.Button.Name = "Button";
-            this.Button.Size = new System.Drawing.Size(25, 26);
-            this.Button.TabIndex = 5;
-            this.Button.UseVisualStyleBackColor = true;
-            this.Button.Click += new System.EventHandler(this.Button_Click);
+            this.VisibleButton.BackgroundImage = global::Notebook.Properties.Resources.images;
+            this.VisibleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.VisibleButton.Location = new System.Drawing.Point(505, 236);
+            this.VisibleButton.Name = "VisibleButton";
+            this.VisibleButton.Size = new System.Drawing.Size(25, 26);
+            this.VisibleButton.TabIndex = 5;
+            this.VisibleButton.UseVisualStyleBackColor = true;
+            this.VisibleButton.Click += new System.EventHandler(this.VisibleButton_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Notebook.Properties.Resources.Usuario;
-            this.pictureBox1.Image = global::Notebook.Properties.Resources.Usuario;
-            this.pictureBox1.Location = new System.Drawing.Point(308, 69);
+            this.pictureBox1.Image = global::Notebook.Properties.Resources.ImagenLogin;
+            this.pictureBox1.Location = new System.Drawing.Point(328, 58);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 110);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 130);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // SalirButton
+            // 
+            this.SalirButton.Location = new System.Drawing.Point(291, 298);
+            this.SalirButton.Name = "SalirButton";
+            this.SalirButton.Size = new System.Drawing.Size(96, 34);
+            this.SalirButton.TabIndex = 7;
+            this.SalirButton.Text = "Salir";
+            this.SalirButton.UseVisualStyleBackColor = true;
+            this.SalirButton.Click += new System.EventHandler(this.SalirButton_Click);
             // 
             // LoginForm
             // 
@@ -123,8 +137,9 @@
             this.BackgroundImage = global::Notebook.Properties.Resources.color_fondo_azul_claro_brillante_color_azul_claro_degradado_40417_157;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 390);
+            this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Button);
+            this.Controls.Add(this.VisibleButton);
             this.Controls.Add(this.IngresarButton);
             this.Controls.Add(this.ContraseñaTextBox);
             this.Controls.Add(this.UsuarioTextBox);
@@ -151,8 +166,9 @@
         private System.Windows.Forms.Button IngresarButton;
         private System.Windows.Forms.ErrorProvider LoginErrorProvider;
         private System.Windows.Forms.ToolTip LoginToolTip;
-        private System.Windows.Forms.Button Button;
+        private System.Windows.Forms.Button VisibleButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button SalirButton;
     }
 }
 

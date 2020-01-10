@@ -7,3 +7,78 @@ C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.Pr
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.exe
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\gmale\OneDrive\Escritorio\Progra II verano\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\Usuario\Desktop\NoteBook22\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\Usuario\Desktop\NoteBook23\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.EditorDeTexto.resources
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.GuardadoForm.resources
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\Usuario\Desktop\NoteBook24\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.LoginForm.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.MenuForm.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.exe
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.pdb
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe.config
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.exe
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Notebook.pdb
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.EditorDeNotas.resources
+C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.CrearForm.resources
