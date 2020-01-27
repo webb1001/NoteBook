@@ -57,9 +57,9 @@ namespace Notebook
         }
         private void IngresarButton_Click(object sender, EventArgs e)       //Si la informacion es valida permite el acceso a la aplicacion
         {
-            if (InformacionEsValida() == true)
+            if (InformacionEsValida())
             {
-                if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
+                if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text))
                 {
                     MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
                     this.Hide();

@@ -83,6 +83,16 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CuadernoAzul {
+            get {
+                object obj = ResourceManager.GetObject("CuadernoAzul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CuAM {
             get {
                 object obj = ResourceManager.GetObject("CuAM", resourceCulture);

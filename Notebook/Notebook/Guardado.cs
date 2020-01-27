@@ -29,9 +29,9 @@ namespace Notebook
             LeerArchivo();
             File.Delete(nombreUsuario + ".txt");        //Elimina el contenido del archivo
             StreamWriter escritor = new StreamWriter(nombreUsuario + ".txt");       //Permite escribir en el .txt
-            int aux = Convert.ToInt32(campos[1]);       //Recibe la cantidad de cuadernos creados
-            aux++;      //Se aumenta cantidad de cuadernos creados
-            campos[1] = Convert.ToString(aux);      //Actualiza la cantidad de cuadernos creados
+            int idCuaderno = Convert.ToInt32(campos[1]);       //Recibe la cantidad de cuadernos creados
+            idCuaderno++;      //Se aumenta cantidad de cuadernos creados
+            campos[1] = Convert.ToString(idCuaderno);      //Actualiza la cantidad de cuadernos creados
             for (int i = 0; i < campos.Length; i++)     //Reescribe todo el contenido del .txt
             {
                 campos[i] = campos[i] + "°";
@@ -39,7 +39,7 @@ namespace Notebook
             }
             escritor.Close();       //Cierra el escritor de archivos 
         }
-        public void LeerArchivo()       //Permite leer todo el archivo .txt del usuario y otorga datos a las variables
+        public void LeerArchivo()       //Permi leer todo el archivo .txt del usuario y otorga datos a las variables
         {
             try
             {
@@ -59,7 +59,7 @@ namespace Notebook
         }
         private void GuardarButton_Click(object sender, EventArgs e)        //Crea un cuadernos con los datos agregados por el usuario
         {
-            if (InformacionEsValida() == true)      //Verifica que todos los datos solicitados hayan sido ingresados
+            if (InformacionEsValida())      //Verifica que todos los datos solicitados hayan sido ingresados
             {
                 LeerArchivo();
                 SobreescribirArchivo();     //Actualiza el contador de cuadernos creados

@@ -59,29 +59,29 @@ namespace Notebook
                 this.Hide();        //Esconde el formulario actual
             }
         }
-        private void MenuForm_Load(object sender, EventArgs e)      //Cara el formulario
+        private void MenuForm_Load(object sender, EventArgs e)      //Carga el formulario
         {
             LeerArchivo();      //Actualiza las variables relacionadas al .txt
             DibujarCategoria();     //Dibija etiquetas con las categorias de los cuadernos
             DibujarCuadernos();     //Dibuja cuadernos con sus respectivos nombres
         }
-        public Image ColorCuaderno(int i)       //Especifica la caracteristica color de los cuadernos
+        public Image ColorCuaderno(int idCuaderno)       //Especifica la caracteristica color de los cuadernos
         {
             LeerArchivo();
             Image imagen;       //Genera un objeto de tipo imagen
-            if (campos[i * 4 + 4].Trim().ToString() == "Rojo")
+            if (campos[idCuaderno * 4 + 4].Trim().ToString() == "Rojo")
             {
                 imagen = Image.FromFile("CuR.png");     //Si su caracteristica color coincide con "Rojo"
             }
-            else if (campos[i * 4 + 4].Trim().ToString() == "Azul")
+            else if (campos[idCuaderno * 4 + 4].Trim().ToString() == "Azul")
             {
-                imagen = Image.FromFile("CuA.png");     //Si su caracteristica color coincide con "Azul"
+                imagen = Image.FromFile("CuadernoAzul.png");     //Si su caracteristica color coincide con "Azul"
             }
-            else if (campos[i * 4 + 4].Trim().ToString() == "Amarillo")
+            else if (campos[idCuaderno * 4 + 4].Trim().ToString() == "Amarillo")
             {
                 imagen = Image.FromFile("CuAM.png");        //Si su caracteristica color coincide con "Amarillo"
             }
-            else if (campos[i * 4 + 4].Trim().ToString() == "Cafe")
+            else if (campos[idCuaderno * 4 + 4].Trim().ToString() == "Cafe")
             {
                 imagen = Image.FromFile("CuC.png");     //Si su caracteristica color coincide con "Cafe"
             }
@@ -113,7 +113,8 @@ namespace Notebook
                     cuaderno.Left = x;
                     cuaderno.Top = y;
                     cuaderno.Image = cuadernoImagen;
-                    //Agregar que la imagen sea stetch...
+                    cuaderno.BackColor = Color.Transparent;
+                    //Agregar que la imagen sea stretch...
                     cuaderno.Click += new EventHandler(handlerComun_Click);
                     EstanteriaPanel.Controls.Add(cuaderno);
                     x += 150;

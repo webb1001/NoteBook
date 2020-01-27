@@ -19,16 +19,16 @@ namespace Notebook
         string cadena;      //Se usa para almacenar el contenido del .txt
         string[] campos = new string[47];       //Mediante el caracter " ° " separa el contenido de cadena
         char[] separador = { '°' };     //Almacena el caracter usado como separador
-        int numeroCuaderno = 0;     //Revise el numero del cuaderno que va a ser eeditado
+        int idCuaderno = 0;     //Revise el numero del cuaderno que va a ser eeditado
         public EditorDeNotas(string nombreUsuario)
         {
             this.nombreUsuario = nombreUsuario;
             InitializeComponent();
         }
-        public EditorDeNotas(string nombreUsuario,int numeroCuaderno)
+        public EditorDeNotas(string nombreUsuario,int idCuaderno)
         {
             this.nombreUsuario = nombreUsuario;
-            this.numeroCuaderno = numeroCuaderno;
+            this.idCuaderno = idCuaderno;
             InitializeComponent();
         }
         private void formatoToolStripMenuItem_Click(object sender, EventArgs e)     //Permite la edicion del formato de las notas
@@ -42,18 +42,18 @@ namespace Notebook
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)     //Guarda los cambios realizados en los cuadernos
         {
             LeerArchivo();
-            if (numeroCuaderno == 0)        //Verifica que sea la primera vez que se escribe sobre este cuaderno
+            if (idCuaderno == 0)        //Verifica que sea la primera vez que se escribe sobre este cuaderno
             {
                 LeerArchivo();
                 escritor = File.AppendText(nombreUsuario + ".txt");
                 escritor.WriteLine(PaginaRichTextBox.Text);
-                numeroCuaderno++;
+                idCuaderno++;
                 escritor.Close();
             }
             else        //En otro caso sobreescribe los cambios
             {
                 LeerArchivo();
-                SobreescribirArchivo(numeroCuaderno - 1);
+                SobreescribirArchivo(idCuaderno - 1);
             }
         }
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)      //Cierra el editor de notas
@@ -62,7 +62,7 @@ namespace Notebook
             DialogResult cerrar = MessageBox.Show("¿Desea guardar antes de salir?", "Confirmación", MessageBoxButtons.YesNo);
             if (cerrar == DialogResult.Yes)     //En caso que desee guardar cambios
             {
-                if (numeroCuaderno == 0)         //Verifica que sea la primera vez que se escribe sobre este cuaderno
+                if (idCuaderno == 0)         //Verifica que sea la primera vez que se escribe sobre este cuaderno
                 {
                     escritor = File.AppendText(nombreUsuario + ".txt");
                     escritor.WriteLine(PaginaRichTextBox.Text);
@@ -71,7 +71,7 @@ namespace Notebook
                 }
                 else        //En otro caso sobreescribe los cambios
                 {
-                    SobreescribirArchivo(numeroCuaderno - 1);
+                    SobreescribirArchivo(idCuaderno - 1);
                 }
             }
             else if (cerrar == DialogResult.No)     //En caso que desee salir sin guardar o haya guardado antes de presionar el boton cerrar
@@ -120,9 +120,9 @@ namespace Notebook
         private void EditorDeNotas_Load(object sender, EventArgs e)
         {
             LeerArchivo();
-            if(numeroCuaderno != 0)     //Es una validacion
+            if(idCuaderno != 0)     //Es una validacion
             {
-                CargarArchivo(numeroCuaderno - 1);     //Carga el texto del cuaderno seleccionado
+                CargarArchivo(idCuaderno - 1);     //Carga el texto del cuaderno seleccionado
             }
         }
         public void CargarArchivo(int numeroCuaderno)       //Carga el texto del cuaderno al que se ingreso
