@@ -82,3 +82,15 @@ C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.
 C:\Users\Usuario\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.CrearForm.resources
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.EditorDeNotas.resources
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.CrearForm.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Google.Protobuf.dll
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\MySql.Data.dll
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Renci.SshNet.dll
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Google.Protobuf.xml
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\MySql.Data.xml
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Renci.SshNet.xml
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.RegistroForm.resources
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.CopyComplete

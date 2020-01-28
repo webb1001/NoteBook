@@ -227,5 +227,29 @@
   <ItemGroup>
     <None Include="bin\Debug\CuadernoAzul.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoRegistro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equisCerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojoMistico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\ojoMisticoBienHecho.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

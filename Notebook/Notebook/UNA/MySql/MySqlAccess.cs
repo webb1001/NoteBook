@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Notebook
+namespace Notebook.UNA.MySql
 {
     public class MySqlAccess : DbAccess
     {
