@@ -251,5 +251,29 @@
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\ojoMisticoBienHecho.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenLogin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenLogin3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenLogin4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoMorado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoMorado2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoMorado3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OjoConFondoMorado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OjoNegro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

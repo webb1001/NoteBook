@@ -28,6 +28,8 @@ namespace Notebook
             RegistroToolTip.SetToolTip(UsuarioTextBox, "Ingrese su nombre de usuario.");
             RegistroToolTip.SetToolTip(ContraseñaTextBox, "Ingrese su contraseña (Minimo 5 caracteres, maximo )");       
             RegistroToolTip.SetToolTip(ConfirmarTextBox, "Confirme su contraseña.");
+            RegistroToolTip.SetToolTip(OjoContraseñaButton, "Muestra la contraseña");
+            RegistroToolTip.SetToolTip(OjoConfirmarButton, "Muestra la contraseña");
         }
         private void NombreTextBox_Enter(object sender, EventArgs e)
         {
@@ -131,7 +133,7 @@ namespace Notebook
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -205,7 +207,6 @@ namespace Notebook
             else if (InformacionEsValida())
             {
                 MySqlAccess acceso = new MySqlAccess();
-                acceso.ConnectionString = "server=localhost;database=NotebookDb;uid=root;pwd=mfml1603";
                 acceso.OpenConnection();
                 acceso.EjectSQL(string.Format("insert into Usuarios(nombre_completo,nombre_usuario,contraseña) values('{0}','{1}','{2}')", nombreCompleto, nombreUsuario, contraseña));
                 acceso.CloseConnection();
@@ -221,6 +222,35 @@ namespace Notebook
             LoginForm form = new LoginForm();
             this.Close();
             form.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           if (ContraseñaTextBox.UseSystemPasswordChar == true)
+            {
+                ContraseñaTextBox.UseSystemPasswordChar = false;
+            }
+            else if (ContraseñaTextBox.UseSystemPasswordChar == false && ContraseñaTextBox.Text != "CONTRASEÑA")
+            {
+                ContraseñaTextBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void OjoConfirmarButton_Click(object sender, EventArgs e)
+        {
+            if (ConfirmarTextBox.UseSystemPasswordChar == true)
+            {
+                ConfirmarTextBox.UseSystemPasswordChar = false;
+            }
+            else if (ConfirmarTextBox.UseSystemPasswordChar == false && ConfirmarTextBox.Text != "CONFIRMAR CONTRASEÑA")
+            {
+                ConfirmarTextBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void ContraseñaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

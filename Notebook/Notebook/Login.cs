@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Notebook.UNA.Usuario;
+using Notebook.UNA.MySql;
 
 namespace Notebook
 {
@@ -57,13 +58,20 @@ namespace Notebook
         }
         private void IngresarButton_Click(object sender, EventArgs e)       //Si la informacion es valida permite el acceso a la aplicacion
         {
+            MySqlAccess acceso = new MySqlAccess();
             if (InformacionEsValida())
             {
-                if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text))
+                //if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text))
+                //{
+                //    MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
+                //    this.Hide();
+                //    estanteria.Show();
+                //}
+                if (acceso.VerificarLogin(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
                 {
-                    MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
-                    this.Hide();
-                    estanteria.Show();
+                   MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
+                   this.Hide();
+                   estanteria.Show();
                 }
                 else
                 {
@@ -74,13 +82,13 @@ namespace Notebook
         }
         private void VisibleButton_Click(object sender, EventArgs e)        //Permite visualizar la contraseña
         {
-            if (ContraseñaTextBox.PasswordChar == '*')
+            if (ContraseñaTextBox.UseSystemPasswordChar == true)
             {
-                ContraseñaTextBox.PasswordChar = '\0';
+                ContraseñaTextBox.UseSystemPasswordChar = false;
             }
-            else if (ContraseñaTextBox.PasswordChar == '\0')
+            else if (ContraseñaTextBox.UseSystemPasswordChar == false && ContraseñaTextBox.Text != "CONTRASEÑA")
             {
-                ContraseñaTextBox.PasswordChar = '*';
+                ContraseñaTextBox.UseSystemPasswordChar = true;
             }
         }
         private void ContraseñaTextBox_KeyPress(object sender, KeyPressEventArgs e)     //Permite usar la tecla Enter como atajo
@@ -112,6 +120,44 @@ namespace Notebook
             RegistroForm registro = new RegistroForm();
             this.Hide();
             registro.Show();
+        }
+
+        private void ContraseñaTextBox_Enter(object sender, EventArgs e)
+        {
+            if (ContraseñaTextBox.Text == "CONTRASEÑA")
+            {
+                ContraseñaTextBox.Text = "";
+                ContraseñaTextBox.ForeColor = Color.LightGray;
+                ContraseñaTextBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void ContraseñaTextBox_Leave(object sender, EventArgs e)
+        {
+            if (ContraseñaTextBox.Text == "")
+            {
+                ContraseñaTextBox.Text = "CONTRASEÑA";
+                ContraseñaTextBox.ForeColor = Color.DarkGray;
+                ContraseñaTextBox.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void UsuarioTextBox_Enter(object sender, EventArgs e)
+        {
+            if (UsuarioTextBox.Text == "USUARIO")
+            {
+                UsuarioTextBox.Text = "";
+                UsuarioTextBox.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void UsuarioTextBox_Leave(object sender, EventArgs e)
+        {
+            if (UsuarioTextBox.Text == "")
+            {
+                UsuarioTextBox.Text = "USUARIO";
+                UsuarioTextBox.ForeColor = Color.DarkGray;
+            }
         }
     }
 } 

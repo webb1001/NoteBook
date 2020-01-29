@@ -44,18 +44,19 @@
             this.RegistroLabel = new System.Windows.Forms.Label();
             this.Cancelarutton = new System.Windows.Forms.Button();
             this.AceptarButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.RegistroContenidoPanel = new System.Windows.Forms.Panel();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.RegistroErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.RegistroToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.RegistroFondoPanel = new System.Windows.Forms.Panel();
+            this.OjoConfirmarButton = new System.Windows.Forms.Button();
+            this.OjoContraseñaButton = new System.Windows.Forms.Button();
+            this.MinimizarPictureBox = new System.Windows.Forms.PictureBox();
+            this.CerrarPictureBox = new System.Windows.Forms.PictureBox();
+            this.RegistroContenidoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RegistroErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizarPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CerrarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ConfirmarLineShape
@@ -185,6 +186,7 @@
             this.ContraseñaTextBox.Size = new System.Drawing.Size(251, 22);
             this.ContraseñaTextBox.TabIndex = 5;
             this.ContraseñaTextBox.Text = "CONTRASEÑA";
+            this.ContraseñaTextBox.TextChanged += new System.EventHandler(this.ContraseñaTextBox_TextChanged);
             this.ContraseñaTextBox.Enter += new System.EventHandler(this.ContraseñaTextBox_Enter);
             this.ContraseñaTextBox.Leave += new System.EventHandler(this.ContraseñaTextBox_Leave);
             // 
@@ -248,28 +250,29 @@
             this.AceptarButton.UseVisualStyleBackColor = false;
             this.AceptarButton.Click += new System.EventHandler(this.AceptarButton_Click);
             // 
-            // panel1
+            // RegistroContenidoPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.AceptarButton);
-            this.panel1.Controls.Add(this.Cancelarutton);
-            this.panel1.Controls.Add(this.ConfirmarTextBox);
-            this.panel1.Controls.Add(this.ContraseñaTextBox);
-            this.panel1.Controls.Add(this.UsuarioTextBox);
-            this.panel1.Controls.Add(this.SegundoApellidoTextBox);
-            this.panel1.Controls.Add(this.PrimerApellidoTextBox);
-            this.panel1.Controls.Add(this.RegistroLabel);
-            this.panel1.Controls.Add(this.NombreTextBox);
-            this.panel1.Controls.Add(this.shapeContainer2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(266, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(408, 525);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.RegistroContenidoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.RegistroContenidoPanel.Controls.Add(this.OjoConfirmarButton);
+            this.RegistroContenidoPanel.Controls.Add(this.OjoContraseñaButton);
+            this.RegistroContenidoPanel.Controls.Add(this.MinimizarPictureBox);
+            this.RegistroContenidoPanel.Controls.Add(this.CerrarPictureBox);
+            this.RegistroContenidoPanel.Controls.Add(this.AceptarButton);
+            this.RegistroContenidoPanel.Controls.Add(this.Cancelarutton);
+            this.RegistroContenidoPanel.Controls.Add(this.ConfirmarTextBox);
+            this.RegistroContenidoPanel.Controls.Add(this.ContraseñaTextBox);
+            this.RegistroContenidoPanel.Controls.Add(this.UsuarioTextBox);
+            this.RegistroContenidoPanel.Controls.Add(this.SegundoApellidoTextBox);
+            this.RegistroContenidoPanel.Controls.Add(this.PrimerApellidoTextBox);
+            this.RegistroContenidoPanel.Controls.Add(this.RegistroLabel);
+            this.RegistroContenidoPanel.Controls.Add(this.NombreTextBox);
+            this.RegistroContenidoPanel.Controls.Add(this.shapeContainer2);
+            this.RegistroContenidoPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.RegistroContenidoPanel.Location = new System.Drawing.Point(266, 0);
+            this.RegistroContenidoPanel.Name = "RegistroContenidoPanel";
+            this.RegistroContenidoPanel.Size = new System.Drawing.Size(408, 525);
+            this.RegistroContenidoPanel.TabIndex = 0;
+            this.RegistroContenidoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // shapeContainer2
             // 
@@ -287,54 +290,69 @@
             this.shapeContainer2.TabIndex = 8;
             this.shapeContainer2.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(274, 525);
-            this.panel2.TabIndex = 11;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
             // RegistroErrorProvider
             // 
             this.RegistroErrorProvider.ContainerControl = this;
             // 
-            // button1
+            // RegistroFondoPanel
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.button1.BackgroundImage = global::Notebook.Properties.Resources.ojoMisticoBienHecho;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.button1.Location = new System.Drawing.Point(296, 302);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 23);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = false;
+            this.RegistroFondoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.RegistroFondoPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RegistroFondoPanel.Location = new System.Drawing.Point(0, 0);
+            this.RegistroFondoPanel.Name = "RegistroFondoPanel";
+            this.RegistroFondoPanel.Size = new System.Drawing.Size(274, 525);
+            this.RegistroFondoPanel.TabIndex = 11;
+            this.RegistroFondoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
-            // pictureBox3
+            // OjoConfirmarButton
             // 
-            this.pictureBox3.BackgroundImage = global::Notebook.Properties.Resources.minimizar2;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(359, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.OjoConfirmarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.OjoConfirmarButton.BackgroundImage = global::Notebook.Properties.Resources.ojoMisticoBienHecho;
+            this.OjoConfirmarButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OjoConfirmarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OjoConfirmarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.OjoConfirmarButton.Location = new System.Drawing.Point(299, 352);
+            this.OjoConfirmarButton.Name = "OjoConfirmarButton";
+            this.OjoConfirmarButton.Size = new System.Drawing.Size(27, 23);
+            this.OjoConfirmarButton.TabIndex = 13;
+            this.OjoConfirmarButton.UseVisualStyleBackColor = false;
+            this.OjoConfirmarButton.Click += new System.EventHandler(this.OjoConfirmarButton_Click);
             // 
-            // pictureBox2
+            // OjoContraseñaButton
             // 
-            this.pictureBox2.BackgroundImage = global::Notebook.Properties.Resources.equisCerrar2;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(385, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.OjoContraseñaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.OjoContraseñaButton.BackgroundImage = global::Notebook.Properties.Resources.ojoMisticoBienHecho;
+            this.OjoContraseñaButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OjoContraseñaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OjoContraseñaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.OjoContraseñaButton.Location = new System.Drawing.Point(299, 302);
+            this.OjoContraseñaButton.Name = "OjoContraseñaButton";
+            this.OjoContraseñaButton.Size = new System.Drawing.Size(27, 23);
+            this.OjoContraseñaButton.TabIndex = 12;
+            this.OjoContraseñaButton.UseVisualStyleBackColor = false;
+            this.OjoContraseñaButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MinimizarPictureBox
+            // 
+            this.MinimizarPictureBox.BackgroundImage = global::Notebook.Properties.Resources.minimizar2;
+            this.MinimizarPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MinimizarPictureBox.Location = new System.Drawing.Point(359, 3);
+            this.MinimizarPictureBox.Name = "MinimizarPictureBox";
+            this.MinimizarPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.MinimizarPictureBox.TabIndex = 11;
+            this.MinimizarPictureBox.TabStop = false;
+            this.MinimizarPictureBox.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // CerrarPictureBox
+            // 
+            this.CerrarPictureBox.BackgroundImage = global::Notebook.Properties.Resources.equisCerrar2;
+            this.CerrarPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CerrarPictureBox.Location = new System.Drawing.Point(385, 3);
+            this.CerrarPictureBox.Name = "CerrarPictureBox";
+            this.CerrarPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.CerrarPictureBox.TabIndex = 10;
+            this.CerrarPictureBox.TabStop = false;
+            this.CerrarPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // RegistroForm
             // 
@@ -342,19 +360,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
             this.ClientSize = new System.Drawing.Size(674, 525);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.RegistroFondoPanel);
+            this.Controls.Add(this.RegistroContenidoPanel);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.RegistroForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.RegistroContenidoPanel.ResumeLayout(false);
+            this.RegistroContenidoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RegistroErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MinimizarPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CerrarPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,13 +393,14 @@
         private System.Windows.Forms.Label RegistroLabel;
         private System.Windows.Forms.Button Cancelarutton;
         private System.Windows.Forms.Button AceptarButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel RegistroContenidoPanel;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox CerrarPictureBox;
+        private System.Windows.Forms.PictureBox MinimizarPictureBox;
+        private System.Windows.Forms.Panel RegistroFondoPanel;
         private System.Windows.Forms.ErrorProvider RegistroErrorProvider;
         private System.Windows.Forms.ToolTip RegistroToolTip;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button OjoContraseñaButton;
+        private System.Windows.Forms.Button OjoConfirmarButton;
     }
 }

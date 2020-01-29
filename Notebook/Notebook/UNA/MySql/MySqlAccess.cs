@@ -10,6 +10,12 @@ namespace Notebook.UNA.MySql
 {
     public class MySqlAccess : DbAccess
     {
+
+        public MySqlAccess()
+        {
+            ConnectionString = "server=localhost;database=NotebookDb;uid=root;pwd=mfml1603";
+        }
+
         public override void BeginTransaction()
         {
             if(Connection != null)
@@ -74,5 +80,68 @@ namespace Notebook.UNA.MySql
                 Transaction.Rollback();
             }
         }
+
+        public MySqlConnection GetConnection()
+        {
+            return new MySqlConnection( ConnectionString);
+        }
+
+        //public bool VerificarLogin(string usuario, string contraseña)
+        //{
+        //    MySqlCommand command = new MySqlCommand();
+        //    MySqlAccess acceso = new MySqlAccess();
+        //    command.Connection = acceso.GetConnection();
+        //    command.CommandText = "select *from Usuarios where nombre_usuario=@usuario and contraseña=@contraseña";
+        //    command.Parameters.AddWithValue("@nombre_usuario", usuario);
+        //    command.Parameters.AddWithValue("@contraseña", contraseña);
+        //    command.CommandType = CommandType.Text;
+        //    MySqlDataReader reader = command.ExecuteReader();
+        //    if (reader.HasRows)
+        //    {
+        //        acceso.CloseConnection();
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        acceso.CloseConnection();
+        //        return false;
+        //    }
+        //}
+
+        public bool VerificarLogin(string usuario, string contraseña)
+        {
+            string pUsuario= "";
+            string pContraseña = ""; 
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT nombre_usuario, contraseña FROM Usuarios where nombre_usuario = '{0}' and contraseña = '{1}'", usuario, contraseña));
+            var connection = GetConnection();
+            connection.Open();
+            command.Connection = connection;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                pUsuario = reader.GetString(0);
+                pContraseña = reader.GetString(1);
+            }
+            if(pUsuario == usuario && pContraseña == contraseña)
+            {
+                
+                return true;
+            }
+            else
+            {
+               
+                return false;
+            }
+        }
+
+        //public bool VerificarLogin(string usuario, string contraseña)
+        //{
+        //    MySqlAccess acceso = new MySqlAccess();
+        //    acceso.ConnectionString = "server=localhost;database=NotebookDb;uid=root;pwd=mfml1603";
+        //    acceso.OpenConnection();
+        //    acceso.EjectSQL(string.Format("select *from Usuarios where nombre_usuario='{0}' and contraseña='{1}'", usuario, contraseña));
+        //    acceso.CloseConnection();
+        //    return true;
+        //}
     }
 }

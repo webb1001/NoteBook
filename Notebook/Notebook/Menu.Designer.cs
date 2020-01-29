@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.EstanteriaPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.crearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CerrarSesionButton = new System.Windows.Forms.Button();
+            this.EstanteriaPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // EstanteriaPanel
-            // 
-            this.EstanteriaPanel.BackgroundImage = global::Notebook.Properties.Resources.estanteriaVacia;
-            this.EstanteriaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.EstanteriaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EstanteriaPanel.Location = new System.Drawing.Point(0, 24);
-            this.EstanteriaPanel.Name = "EstanteriaPanel";
-            this.EstanteriaPanel.Size = new System.Drawing.Size(552, 449);
-            this.EstanteriaPanel.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -88,6 +78,16 @@
             this.CerrarSesionButton.UseVisualStyleBackColor = true;
             this.CerrarSesionButton.Click += new System.EventHandler(this.CerrarSesioButton_Click);
             // 
+            // EstanteriaPanel
+            // 
+            this.EstanteriaPanel.BackgroundImage = global::Notebook.Properties.Resources.estanteriaVacia;
+            this.EstanteriaPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EstanteriaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EstanteriaPanel.Location = new System.Drawing.Point(0, 24);
+            this.EstanteriaPanel.Name = "EstanteriaPanel";
+            this.EstanteriaPanel.Size = new System.Drawing.Size(552, 449);
+            this.EstanteriaPanel.TabIndex = 0;
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,7 +97,7 @@
             this.Controls.Add(this.CerrarSesionButton);
             this.Controls.Add(this.EstanteriaPanel);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

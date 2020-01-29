@@ -183,6 +183,36 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoMorado {
+            get {
+                object obj = ResourceManager.GetObject("fondoMorado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoMorado2 {
+            get {
+                object obj = ResourceManager.GetObject("fondoMorado2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoMorado3 {
+            get {
+                object obj = ResourceManager.GetObject("fondoMorado3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoRegistro {
             get {
                 object obj = ResourceManager.GetObject("fondoRegistro", resourceCulture);
@@ -293,6 +323,36 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImagenLogin2 {
+            get {
+                object obj = ResourceManager.GetObject("ImagenLogin2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImagenLogin3 {
+            get {
+                object obj = ResourceManager.GetObject("ImagenLogin3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImagenLogin4 {
+            get {
+                object obj = ResourceManager.GetObject("ImagenLogin4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -374,6 +434,16 @@ namespace Notebook.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OjoConFondoMorado {
+            get {
+                object obj = ResourceManager.GetObject("OjoConFondoMorado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ojoMistico {
             get {
                 object obj = ResourceManager.GetObject("ojoMistico", resourceCulture);
@@ -387,6 +457,16 @@ namespace Notebook.Properties {
         internal static System.Drawing.Bitmap ojoMisticoBienHecho {
             get {
                 object obj = ResourceManager.GetObject("ojoMisticoBienHecho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OjoNegro {
+            get {
+                object obj = ResourceManager.GetObject("OjoNegro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
