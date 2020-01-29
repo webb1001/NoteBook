@@ -94,3 +94,4 @@ C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\MySql.Data.
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\bin\Debug\Renci.SshNet.xml
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.RegistroForm.resources
 C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.csproj.CopyComplete
+C:\Users\chris\Documents\GitHub\NoteBook\Notebook\Notebook\obj\Debug\Notebook.MenuFormulario.resources

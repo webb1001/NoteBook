@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Notebook.UNA.Usuario;
 using Notebook.UNA.MySql;
+using System.Runtime.InteropServices;
 
 namespace Notebook
 {
@@ -158,6 +159,17 @@ namespace Notebook
                 UsuarioTextBox.Text = "USUARIO";
                 UsuarioTextBox.ForeColor = Color.DarkGray;
             }
+        }
+        //agregar arrastrar form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wnsg, int wparam, int lparam);
+
+        private void LoginForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 } 

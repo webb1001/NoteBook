@@ -87,6 +87,7 @@
             this.EstanteriaPanel.Name = "EstanteriaPanel";
             this.EstanteriaPanel.Size = new System.Drawing.Size(552, 449);
             this.EstanteriaPanel.TabIndex = 0;
+            this.EstanteriaPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.EstanteriaPanel_Paint);
             // 
             // MenuForm
             // 

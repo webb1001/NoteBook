@@ -252,5 +252,11 @@ namespace Notebook
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MenuFormulario a = new MenuFormulario();
+            a.Show();
+        }
     }
 }

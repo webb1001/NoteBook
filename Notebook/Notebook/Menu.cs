@@ -222,5 +222,10 @@ namespace Notebook
                 login.Show();
             }
         }
+
+        private void EstanteriaPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
