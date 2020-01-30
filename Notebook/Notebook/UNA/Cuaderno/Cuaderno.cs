@@ -14,6 +14,7 @@ namespace Notebook.UNA.Cuaderno
         public string categoria;
         public string color;
 
+        public Cuaderno(){}
      public Cuaderno(int id_cuaderno, int id_usuario, string titulo, string categoria, string color)
         {
             this.idCuaderno = id_cuaderno;

@@ -83,7 +83,7 @@ namespace Notebook.UNA.MySql
 
         public MySqlConnection GetConnection()
         {
-            return new MySqlConnection( ConnectionString);
+            return new MySqlConnection(ConnectionString);
         }
 
         //public bool VerificarLogin(string usuario, string contraseña)

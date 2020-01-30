@@ -18,16 +18,14 @@ namespace Notebook.UNA.Cuaderno
             return listaCuadernos;
         }
 
-        public string Prueba()
+        public Cuaderno ConsultaCuaderno(int contadorCuadernos)
         {
-            string aux = "";
-            for (int i =0; i < listaCuadernos.Count(); i++)
-            {
-                aux = aux + listaCuadernos[i].titulo;
-            }
-            return aux;
+            return listaCuadernos[contadorCuadernos];
         }
-
+        public int GetCountLista()
+        {
+            return listaCuadernos.Count();
+        }
         //public bool Verificar(string usuario, string contraseña)
         //{
         //    bool encontrado = false;

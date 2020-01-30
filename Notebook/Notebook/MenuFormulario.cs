@@ -19,6 +19,7 @@ namespace Notebook
         ListaCuaderno listaCuaderno = new ListaCuaderno();
         int idUsuario = 0;
         string nombreUsuario = "";
+        Cuaderno cuaderno = new Cuaderno();
         public MenuFormulario(int idUsuario, string nombreUsuario)
         {
             this.idUsuario = idUsuario;
@@ -126,7 +127,13 @@ namespace Notebook
         private void MenuFormulario_Load(object sender, EventArgs e)
         {
             UsuarioLabel.Text = nombreUsuario;
+            AlgoCuadernos(idUsuario);
+            for(int i = 0; i < listaCuaderno.GetCountLista(); i++)
+            {
 
+                DibujarCuadernos(listaCuaderno.ConsultaCuaderno(i),i);  
+            }
+            
         }
 
         private void CerrarSesiónButton_Click(object sender, EventArgs e)
@@ -139,27 +146,24 @@ namespace Notebook
                 login.Show();
             }
         }
-        public void DibujarCuadernos(string tituloCuaderno)      //Metodo que dibuja los cuadernos que posee el usuario 
+        public void DibujarCuadernos(Cuaderno cuaderno,int conteo)      //Metodo que dibuja los cuadernos que posee el usuario 
         {
-            // Image cuadernoImagen;
+            Image cuadernoImagen;
             int x = 0;
-            int y = 120;
-            int conteo = 1;
-            Button cuaderno = new Button();
-            //   cuadernoImagen = ColorCuaderno(i);
-            cuaderno.AutoSize = false;
-            cuaderno.Name = "CuadernoButton" + conteo.ToString();
-            cuaderno.Text = tituloCuaderno;
-            cuaderno.Width = 200;
-            cuaderno.Height = 46;
-            cuaderno.Left = x;
-            cuaderno.Top = y;
-            // cuaderno.Image = cuadernoImagen;
-            cuaderno.BackColor = Color.Transparent;
-           // cuaderno.Click += new EventHandler(handlerComun_Click);
-            IzquierdaPanel.Controls.Add(cuaderno);
-            y += 46;
-            conteo++;
+            int y = 120+46*conteo;
+            Button portada = new Button();
+            cuadernoImagen = ColorCuaderno(cuaderno);
+            portada.AutoSize = false;
+            portada.Name = "CuadernoButton" + conteo.ToString();
+            portada.Text = cuaderno.titulo;
+            portada.Width = 200;
+            portada.Height = 46;
+            portada.Left = x;
+            portada.Top = y;
+            portada.Image = cuadernoImagen;
+            portada.FlatStyle = FlatStyle.Flat;
+            portada.Click += new EventHandler(handlerComun_Click);
+            IzquierdaPanel.Controls.Add(portada);
         }
         public void CargarCuadernos(int idCuaderno)
         {
@@ -195,11 +199,41 @@ namespace Notebook
                 CargarCuadernos(reader.GetInt32(0));
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public Image ColorCuaderno(Cuaderno cuaderno)       //Especifica la caracteristica color de los cuadernos
         {
-            AlgoCuadernos(idUsuario);
-            MessageBox.Show( listaCuaderno.Prueba());
+            Image imagen;       //Genera un objeto de tipo imagen
+            if (cuaderno.color == "Rojo")
+            {
+                imagen = Image.FromFile("CuadernoRojoMenu.jpg");     //Si su caracteristica color coincide con "Rojo"
+            }
+            else if (cuaderno.color == "Azul")
+            {
+                imagen = Image.FromFile("CuadernoAzulMenu.jpg");     //Si su caracteristica color coincide con "Azul"
+            }
+            else if (cuaderno.color == "Amarillo")
+            {
+                imagen = Image.FromFile("CuadernoAmarilloMenu.jpg");        //Si su caracteristica color coincide con "Amarillo"
+            }
+            else if (cuaderno.color == "Cafe")
+            {
+                imagen = Image.FromFile("CudernoCafeMenu.jpg");     //Si su caracteristica color coincide con "Cafe"
+            }
+            else
+            {
+                imagen = Image.FromFile("CuadernoVerdeMenu.jpg");     //Si su caracteristica color coincide con "Verde"
+            }
+            return imagen;      //Se retorna la imagen con el color adquirido
         }
-    }
+        private void handlerComun_Click(object sender, EventArgs e)     //Metodo que permite usar el evento click en todos los cuadernos creados
+        {
+            for(int i = 0; i < listaCuaderno.GetCountLista(); i++)
+            {
+                if (((Button)sender).Name == "CuadernoButton" + i.ToString())        //Si se hace click en el cuaderno 1, abre su contenido
+                {
+                    AgregarButton.Text = "Agregar nota";
+                    EliminarButton.Text = "Eliminar nota";
+                    ModificarButton.Text = "Modificar nota";
+                }
+            }
+        }
 }

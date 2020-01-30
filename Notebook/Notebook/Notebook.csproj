@@ -319,5 +319,12 @@
   <ItemGroup>
     <None Include="bin\Debug\Imagenes\minimizar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CuadernoAmarilloMenu.jpg" />
+    <Content Include="bin\Debug\CuadernoAzulMenu.jpg" />
+    <Content Include="bin\Debug\CuadernoRojoMenu.jpg" />
+    <Content Include="bin\Debug\CuadernoVerdeMenu.jpg" />
+    <Content Include="bin\Debug\CudernoCafeMenu.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
