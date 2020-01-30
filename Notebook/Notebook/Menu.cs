@@ -54,16 +54,16 @@ namespace Notebook
             }
             else
             {
-                CrearForm guardado = new CrearForm(nombreUsuario);        //Genera el formulario de creacion de cuadernos 
-                guardado.Show();        //Muestra el formularios de creacion de cuadernos
+               // CrearForm guardado = new CrearFormulario(idUsuario);        //Genera el formulario de creacion de cuadernos 
+                //guardado.Show();        //Muestra el formularios de creacion de cuadernos
                 this.Hide();        //Esconde el formulario actual
             }
         }
         private void MenuForm_Load(object sender, EventArgs e)      //Carga el formulario
         {
             LeerArchivo();      //Actualiza las variables relacionadas al .txt
-            DibujarCategoria();     //Dibija etiquetas con las categorias de los cuadernos
-            DibujarCuadernos();     //Dibuja cuadernos con sus respectivos nombres
+         //   DibujarCategoria();     //Dibija etiquetas con las categorias de los cuadernos
+         //   DibujarCuadernos();     //Dibuja cuadernos con sus respectivos nombres
         }
         public Image ColorCuaderno(int idCuaderno)       //Especifica la caracteristica color de los cuadernos
         {
@@ -91,46 +91,31 @@ namespace Notebook
             }
             return imagen;      //Se retorna la imagen con el color adquirido
         }
-        public void DibujarCuadernos()      //Metodo que dibuja los cuadernos que posee el usuario 
+        public void DibujarCuadernos(string tituloCuaderno)      //Metodo que dibuja los cuadernos que posee el usuario 
         {
-            LeerArchivo();
-            Image cuadernoImagen;
-            int x = 75;
-            int y = 55;
-            int aux = 0;
+           // Image cuadernoImagen;
+            int x = 0;
+            int y = 120;
             int conteo = 1;
-            if (Convert.ToInt32(campos[1]) != 0)
-            {
-                for (int i = 0; i < Convert.ToInt32(campos[1]); i++)
-                {
-                    Label cuaderno = new Label();
-                    cuadernoImagen = ColorCuaderno(i);
-                    cuaderno.AutoSize = false;
-                    cuaderno.Name = "CuadernoLabel" + conteo.ToString();
-                    cuaderno.Text = campos[i * 4 + 2].Trim();
-                    cuaderno.Width = 80;
-                    cuaderno.Height = 110;
-                    cuaderno.Left = x;
-                    cuaderno.Top = y;
-                    cuaderno.Image = cuadernoImagen;
-                    cuaderno.BackColor = Color.Transparent;
-                    //Agregar que la imagen sea stretch...
-                    cuaderno.Click += new EventHandler(handlerComun_Click);
-                    EstanteriaPanel.Controls.Add(cuaderno);
-                    x += 150;
-                    aux++;
-                    if (aux == 3 || aux == 6)
-                    {
-                        x = 75;
-                        y += 138;
-                    }
-                    conteo++;
-                }
-            }
+            Button cuaderno = new Button();
+         //   cuadernoImagen = ColorCuaderno(i);
+            cuaderno.AutoSize = false;
+            cuaderno.Name = "CuadernoButton" + conteo.ToString();
+            cuaderno.Text = tituloCuaderno;
+            cuaderno.Width = 200;
+            cuaderno.Height = 46;
+            cuaderno.Left = x;
+            cuaderno.Top = y;
+           // cuaderno.Image = cuadernoImagen;
+            cuaderno.BackColor = Color.Transparent;
+            cuaderno.Click += new EventHandler(handlerComun_Click);
+            EstanteriaPanel.Controls.Add(cuaderno);
+            y += 46;
+            conteo++;
         }
         private void handlerComun_Click(object sender, EventArgs e)     //Metodo que permite usar el evento click en todos los cuadernos creados
         {
-            if(((Label)sender).Name == "CuadernoLabel1")        //Si se hace click en el cuaderno 1, abre su contenido
+            if(((Button)sender).Name == "CuadernoLabel1")        //Si se hace click en el cuaderno 1, abre su contenido
             {
                 EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario, 1);
                 cuaderno.Show();

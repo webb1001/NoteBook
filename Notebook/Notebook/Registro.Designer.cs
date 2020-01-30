@@ -49,7 +49,6 @@
             this.RegistroErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.RegistroToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.RegistroFondoPanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.OjoConfirmarButton = new System.Windows.Forms.Button();
             this.OjoContraseñaButton = new System.Windows.Forms.Button();
             this.MinimizarPictureBox = new System.Windows.Forms.PictureBox();
@@ -129,7 +128,7 @@
             this.NombreTextBox.Location = new System.Drawing.Point(75, 103);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(251, 22);
-            this.NombreTextBox.TabIndex = 1;
+            this.NombreTextBox.TabIndex = 0;
             this.NombreTextBox.Text = "NOMBRE";
             this.NombreTextBox.Enter += new System.EventHandler(this.NombreTextBox_Enter);
             this.NombreTextBox.Leave += new System.EventHandler(this.NombreTextBox_Leave);
@@ -143,7 +142,7 @@
             this.PrimerApellidoTextBox.Location = new System.Drawing.Point(76, 153);
             this.PrimerApellidoTextBox.Name = "PrimerApellidoTextBox";
             this.PrimerApellidoTextBox.Size = new System.Drawing.Size(251, 22);
-            this.PrimerApellidoTextBox.TabIndex = 2;
+            this.PrimerApellidoTextBox.TabIndex = 1;
             this.PrimerApellidoTextBox.Text = "PRIMER APELLIDO";
             this.PrimerApellidoTextBox.Enter += new System.EventHandler(this.PrimerApellidoTextBox_Enter);
             this.PrimerApellidoTextBox.Leave += new System.EventHandler(this.PrimerApellidoTextBox_Leave);
@@ -157,7 +156,7 @@
             this.SegundoApellidoTextBox.Location = new System.Drawing.Point(76, 203);
             this.SegundoApellidoTextBox.Name = "SegundoApellidoTextBox";
             this.SegundoApellidoTextBox.Size = new System.Drawing.Size(251, 22);
-            this.SegundoApellidoTextBox.TabIndex = 3;
+            this.SegundoApellidoTextBox.TabIndex = 2;
             this.SegundoApellidoTextBox.Text = "SEGUNDO APELLIDO";
             this.SegundoApellidoTextBox.Enter += new System.EventHandler(this.SegundoApellidoTextBox_Enter);
             this.SegundoApellidoTextBox.Leave += new System.EventHandler(this.SegundoApellidoTextBox_Leave);
@@ -171,7 +170,7 @@
             this.UsuarioTextBox.Location = new System.Drawing.Point(76, 253);
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(251, 22);
-            this.UsuarioTextBox.TabIndex = 4;
+            this.UsuarioTextBox.TabIndex = 3;
             this.UsuarioTextBox.Text = "NOMBRE USUARIO";
             this.UsuarioTextBox.Enter += new System.EventHandler(this.UsuarioTextBox_Enter);
             this.UsuarioTextBox.Leave += new System.EventHandler(this.UsuarioTextBox_Leave);
@@ -185,7 +184,7 @@
             this.ContraseñaTextBox.Location = new System.Drawing.Point(76, 303);
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(251, 22);
-            this.ContraseñaTextBox.TabIndex = 5;
+            this.ContraseñaTextBox.TabIndex = 4;
             this.ContraseñaTextBox.Text = "CONTRASEÑA";
             this.ContraseñaTextBox.TextChanged += new System.EventHandler(this.ContraseñaTextBox_TextChanged);
             this.ContraseñaTextBox.Enter += new System.EventHandler(this.ContraseñaTextBox_Enter);
@@ -200,7 +199,7 @@
             this.ConfirmarTextBox.Location = new System.Drawing.Point(76, 353);
             this.ConfirmarTextBox.Name = "ConfirmarTextBox";
             this.ConfirmarTextBox.Size = new System.Drawing.Size(251, 22);
-            this.ConfirmarTextBox.TabIndex = 6;
+            this.ConfirmarTextBox.TabIndex = 5;
             this.ConfirmarTextBox.Text = "CONFIRMAR CONTRASEÑA";
             this.ConfirmarTextBox.Enter += new System.EventHandler(this.ConfirmarTextBox_Enter);
             this.ConfirmarTextBox.Leave += new System.EventHandler(this.ConfirmarTextBox_Leave);
@@ -229,7 +228,7 @@
             this.Cancelarutton.Location = new System.Drawing.Point(46, 423);
             this.Cancelarutton.Name = "Cancelarutton";
             this.Cancelarutton.Size = new System.Drawing.Size(121, 39);
-            this.Cancelarutton.TabIndex = 7;
+            this.Cancelarutton.TabIndex = 6;
             this.Cancelarutton.Text = "CANCELAR";
             this.Cancelarutton.UseVisualStyleBackColor = false;
             this.Cancelarutton.Click += new System.EventHandler(this.Cancelarutton_Click);
@@ -246,7 +245,7 @@
             this.AceptarButton.Location = new System.Drawing.Point(239, 423);
             this.AceptarButton.Name = "AceptarButton";
             this.AceptarButton.Size = new System.Drawing.Size(121, 39);
-            this.AceptarButton.TabIndex = 8;
+            this.AceptarButton.TabIndex = 7;
             this.AceptarButton.Text = "ACEPTAR";
             this.AceptarButton.UseVisualStyleBackColor = false;
             this.AceptarButton.Click += new System.EventHandler(this.AceptarButton_Click);
@@ -254,7 +253,6 @@
             // RegistroContenidoPanel
             // 
             this.RegistroContenidoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.RegistroContenidoPanel.Controls.Add(this.button1);
             this.RegistroContenidoPanel.Controls.Add(this.OjoConfirmarButton);
             this.RegistroContenidoPanel.Controls.Add(this.OjoContraseñaButton);
             this.RegistroContenidoPanel.Controls.Add(this.MinimizarPictureBox);
@@ -306,16 +304,6 @@
             this.RegistroFondoPanel.TabIndex = 11;
             this.RegistroFondoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(331, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // OjoConfirmarButton
             // 
             this.OjoConfirmarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
@@ -326,7 +314,7 @@
             this.OjoConfirmarButton.Location = new System.Drawing.Point(299, 352);
             this.OjoConfirmarButton.Name = "OjoConfirmarButton";
             this.OjoConfirmarButton.Size = new System.Drawing.Size(27, 23);
-            this.OjoConfirmarButton.TabIndex = 13;
+            this.OjoConfirmarButton.TabIndex = 9;
             this.OjoConfirmarButton.UseVisualStyleBackColor = false;
             this.OjoConfirmarButton.Click += new System.EventHandler(this.OjoConfirmarButton_Click);
             // 
@@ -340,7 +328,7 @@
             this.OjoContraseñaButton.Location = new System.Drawing.Point(299, 302);
             this.OjoContraseñaButton.Name = "OjoContraseñaButton";
             this.OjoContraseñaButton.Size = new System.Drawing.Size(27, 23);
-            this.OjoContraseñaButton.TabIndex = 12;
+            this.OjoContraseñaButton.TabIndex = 8;
             this.OjoContraseñaButton.UseVisualStyleBackColor = false;
             this.OjoContraseñaButton.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -348,9 +336,9 @@
             // 
             this.MinimizarPictureBox.BackgroundImage = global::Notebook.Properties.Resources.minimizar2;
             this.MinimizarPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MinimizarPictureBox.Location = new System.Drawing.Point(359, 3);
+            this.MinimizarPictureBox.Location = new System.Drawing.Point(367, 3);
             this.MinimizarPictureBox.Name = "MinimizarPictureBox";
-            this.MinimizarPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.MinimizarPictureBox.Size = new System.Drawing.Size(16, 16);
             this.MinimizarPictureBox.TabIndex = 11;
             this.MinimizarPictureBox.TabStop = false;
             this.MinimizarPictureBox.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -359,9 +347,9 @@
             // 
             this.CerrarPictureBox.BackgroundImage = global::Notebook.Properties.Resources.equisCerrar2;
             this.CerrarPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CerrarPictureBox.Location = new System.Drawing.Point(385, 3);
+            this.CerrarPictureBox.Location = new System.Drawing.Point(389, 3);
             this.CerrarPictureBox.Name = "CerrarPictureBox";
-            this.CerrarPictureBox.Size = new System.Drawing.Size(20, 20);
+            this.CerrarPictureBox.Size = new System.Drawing.Size(16, 16);
             this.CerrarPictureBox.TabIndex = 10;
             this.CerrarPictureBox.TabStop = false;
             this.CerrarPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -414,6 +402,5 @@
         private System.Windows.Forms.ToolTip RegistroToolTip;
         private System.Windows.Forms.Button OjoContraseñaButton;
         private System.Windows.Forms.Button OjoConfirmarButton;
-        private System.Windows.Forms.Button button1;
     }
 }

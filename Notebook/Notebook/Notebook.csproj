@@ -77,6 +77,8 @@
     <Compile Include="MenuFormulario.Designer.cs">
       <DependentUpon>MenuFormulario.cs</DependentUpon>
     </Compile>
+    <Compile Include="UNA\Cuaderno\Cuaderno.cs" />
+    <Compile Include="UNA\Cuaderno\ListaCuaderno.cs" />
     <Compile Include="UNA\MySql\DbAccess.cs" />
     <Compile Include="EditorDeNotas.cs">
       <SubType>Form</SubType>
@@ -298,6 +300,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maximizar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\ImagenUsuarioMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\MenuPequeñoIcono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\ImagenUsuarioMenuB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\FondoLibrosMorado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\equisCerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\minimizar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

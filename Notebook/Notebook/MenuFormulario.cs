@@ -8,13 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Notebook.UNA.MySql;
+using Notebook.UNA.Cuaderno;
+using MySql.Data.MySqlClient;
 
 namespace Notebook
 {
     public partial class MenuFormulario : Form
     {
-        public MenuFormulario()
+        ListaCuaderno listaCuaderno = new ListaCuaderno();
+        int idUsuario = 0;
+        string nombreUsuario = "";
+        public MenuFormulario(int idUsuario, string nombreUsuario)
         {
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
             InitializeComponent();
         }
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
@@ -58,7 +66,12 @@ namespace Notebook
 
         private void CerrarPictureBox_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult cerrar = MessageBox.Show("¿Seguro que desea cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo);
+            if (cerrar == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+                
             //Hacer message box de confirmar...
         }
 
@@ -101,6 +114,92 @@ namespace Notebook
         private void MinimizarPictureBox_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void AgregarButton_Click(object sender, EventArgs e)
+        {
+            CrearForm guardado = new CrearForm(idUsuario,nombreUsuario);        //Genera el formulario de creacion de cuadernos 
+            guardado.Show();        //Muestra el formularios de creacion de cuadernos
+            this.Hide();
+        }
+
+        private void MenuFormulario_Load(object sender, EventArgs e)
+        {
+            UsuarioLabel.Text = nombreUsuario;
+
+        }
+
+        private void CerrarSesiónButton_Click(object sender, EventArgs e)
+        {
+            DialogResult cerrar = MessageBox.Show("¿Seguro que desea cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo);
+            if (cerrar == DialogResult.Yes)
+            {
+                this.Close();
+                LoginForm login = new LoginForm();
+                login.Show();
+            }
+        }
+        public void DibujarCuadernos(string tituloCuaderno)      //Metodo que dibuja los cuadernos que posee el usuario 
+        {
+            // Image cuadernoImagen;
+            int x = 0;
+            int y = 120;
+            int conteo = 1;
+            Button cuaderno = new Button();
+            //   cuadernoImagen = ColorCuaderno(i);
+            cuaderno.AutoSize = false;
+            cuaderno.Name = "CuadernoButton" + conteo.ToString();
+            cuaderno.Text = tituloCuaderno;
+            cuaderno.Width = 200;
+            cuaderno.Height = 46;
+            cuaderno.Left = x;
+            cuaderno.Top = y;
+            // cuaderno.Image = cuadernoImagen;
+            cuaderno.BackColor = Color.Transparent;
+           // cuaderno.Click += new EventHandler(handlerComun_Click);
+            IzquierdaPanel.Controls.Add(cuaderno);
+            y += 46;
+            conteo++;
+        }
+        public void CargarCuadernos(int idCuaderno)
+        {
+            string titulo = "";
+            string categoria = "";
+            string color = "";
+            MySqlAccess acceso = new MySqlAccess();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT titulo, categoria, color FROM Cuadernos where id_cuaderno = '{0}'", idCuaderno));
+            var connection = acceso.GetConnection();
+            connection.Open();
+            command.Connection = connection;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                titulo = reader.GetString(0);
+                categoria = reader.GetString(1);
+                color = reader.GetString(2);
+            }
+            Cuaderno cuaderno = new Cuaderno(idCuaderno, idUsuario, titulo, categoria, color);
+            listaCuaderno.Agregar(cuaderno);
+        }
+
+        public void AlgoCuadernos(int idUsuario)
+        {
+            MySqlAccess acceso = new MySqlAccess();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT id_cuaderno FROM Cuadernos where usuario = '{0}'", idUsuario));
+            var connection = acceso.GetConnection();
+            connection.Open();
+            command.Connection = connection;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                CargarCuadernos(reader.GetInt32(0));
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AlgoCuadernos(idUsuario);
+            MessageBox.Show( listaCuaderno.Prueba());
         }
     }
 }

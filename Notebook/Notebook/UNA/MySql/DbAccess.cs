@@ -13,6 +13,7 @@ namespace Notebook.UNA.MySql
         public string ConnectionString { get; set; }
         public DbTransaction Transaction { get; set; }
         public DbConnection Connection { get; set; }
+        public int idUsuario { get; set; }
         public abstract void OpenConnection();
         public abstract void CloseConnection();
         public abstract long EjectSQL(string sql);

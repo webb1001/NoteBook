@@ -133,7 +133,11 @@ namespace Notebook
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult cerrar = MessageBox.Show("¿Seguro que desea cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo);
+            if (cerrar == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -251,12 +255,6 @@ namespace Notebook
         private void ContraseñaTextBox_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            MenuFormulario a = new MenuFormulario();
-            a.Show();
         }
     }
 }

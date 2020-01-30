@@ -13,7 +13,7 @@ namespace Notebook.UNA.MySql
 
         public MySqlAccess()
         {
-            ConnectionString = "server=localhost;database=NotebookDb;uid=root;pwd=mfml1603";
+            ConnectionString = "server=localhost;database=DbNotebook;uid=root;pwd=mfml1603";
         }
 
         public override void BeginTransaction()
@@ -112,15 +112,16 @@ namespace Notebook.UNA.MySql
         {
             string pUsuario= "";
             string pContraseña = ""; 
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT nombre_usuario, contraseña FROM Usuarios where nombre_usuario = '{0}' and contraseña = '{1}'", usuario, contraseña));
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT id_usuario, nombre_usuario, contraseña FROM Usuarios where nombre_usuario = '{0}' and contraseña = '{1}'", usuario, contraseña));
             var connection = GetConnection();
             connection.Open();
             command.Connection = connection;
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                pUsuario = reader.GetString(0);
-                pContraseña = reader.GetString(1);
+                idUsuario = reader.GetInt32(0);
+                pUsuario = reader.GetString(1);
+                pContraseña = reader.GetString(2);
             }
             if(pUsuario == usuario && pContraseña == contraseña)
             {
@@ -132,6 +133,28 @@ namespace Notebook.UNA.MySql
                
                 return false;
             }
+        }
+
+        public void AlgoCuadernos(int idUsuario)
+        {
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT id_cuaderno FROM Cuadernos where usuario = '{0}'", idUsuario));
+            var connection = GetConnection();
+            connection.Open();
+            command.Connection = connection;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                idUsuario = reader.GetInt32(0);
+          //      pUsuario = reader.GetString(1);
+          //      pContraseña = reader.GetString(2);
+            }
+        }
+
+        
+
+        public int RetornaUsuario()
+        {
+            return idUsuario;
         }
 
         //public bool VerificarLogin(string usuario, string contraseña)

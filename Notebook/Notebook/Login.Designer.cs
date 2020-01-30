@@ -41,9 +41,11 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.IconoLoginPictureBox = new System.Windows.Forms.PictureBox();
             this.VisibleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoginErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoLoginPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // UsuarioTextBox
@@ -170,14 +172,24 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Notebook.Properties.Resources.ImagenLogin4;
-            this.pictureBox1.Location = new System.Drawing.Point(230, 35);
+            this.pictureBox1.BackgroundImage = global::Notebook.Properties.Resources.equisCerrar1;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(581, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(140, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            // 
+            // IconoLoginPictureBox
+            // 
+            this.IconoLoginPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.IconoLoginPictureBox.Image = global::Notebook.Properties.Resources.ImagenLogin4;
+            this.IconoLoginPictureBox.Location = new System.Drawing.Point(230, 35);
+            this.IconoLoginPictureBox.Name = "IconoLoginPictureBox";
+            this.IconoLoginPictureBox.Size = new System.Drawing.Size(140, 130);
+            this.IconoLoginPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IconoLoginPictureBox.TabIndex = 6;
+            this.IconoLoginPictureBox.TabStop = false;
             // 
             // VisibleButton
             // 
@@ -203,10 +215,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(64)))), ((int)(((byte)(165)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.RegistrarseButton);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.SalirButton);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.IconoLoginPictureBox);
             this.Controls.Add(this.VisibleButton);
             this.Controls.Add(this.IngresarButton);
             this.Controls.Add(this.ContraseñaTextBox);
@@ -221,6 +234,7 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.LoginErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoLoginPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,10 +250,11 @@
         private System.Windows.Forms.Button SalirButton;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button RegistrarseButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox IconoLoginPictureBox;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

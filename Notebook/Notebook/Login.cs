@@ -15,19 +15,14 @@ namespace Notebook
 {
     public partial class LoginForm : Form
     {
-        ListaUsuario listaCuentas = new ListaUsuario();
-        Usuario persona1 = new Usuario("Alejandro", "primo861", "88213061");        //Se inicializan los usuarios ya que no ha una base de datos
-        Usuario persona2 = new Usuario("Christopher", "webb", "86814065");
-        Usuario persona3 = new Usuario("Ruben", "rmoravargas", "profe");
+        int idUsuario = 0;
         public LoginForm()
         {
             InitializeComponent();      //Inicia graficamente los componentes del form
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            listaCuentas.Agregar(persona1);     //Se agregan los usuarios a la lista de usuarios
-            listaCuentas.Agregar(persona2);
-            listaCuentas.Agregar(persona3);
+
             LoginToolTip.SetToolTip(UsuarioTextBox, "Ingresar el nombre de usuario");       //Se inicializan ambos toolTips para dar informacion al usuario
             LoginToolTip.SetToolTip(ContraseñaTextBox, "Ingresar una contraseña de minimo 5 caracteres");
         }
@@ -62,17 +57,12 @@ namespace Notebook
             MySqlAccess acceso = new MySqlAccess();
             if (InformacionEsValida())
             {
-                //if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text))
-                //{
-                //    MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
-                //    this.Hide();
-                //    estanteria.Show();
-                //}
                 if (acceso.VerificarLogin(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
                 {
-                   MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);
-                   this.Hide();
-                   estanteria.Show();
+                    idUsuario = acceso.RetornaUsuario();
+                    MenuFormulario menu = new MenuFormulario(idUsuario,UsuarioTextBox.Text);
+                    this.Hide();
+                    menu.Show();
                 }
                 else
                 {
@@ -94,15 +84,17 @@ namespace Notebook
         }
         private void ContraseñaTextBox_KeyPress(object sender, KeyPressEventArgs e)     //Permite usar la tecla Enter como atajo
         {
+            MySqlAccess acceso = new MySqlAccess();
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 if (InformacionEsValida() == true)
                 {
-                    if (listaCuentas.Verificar(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
+                    if (acceso.VerificarLogin(UsuarioTextBox.Text, ContraseñaTextBox.Text) == true)
                     {
-                        MenuForm estanteria = new MenuForm(UsuarioTextBox.Text);        //Se abre el menu y se recibe el nombre del usuario que accedió
+                        idUsuario = acceso.RetornaUsuario();
+                        MenuFormulario menu = new MenuFormulario(idUsuario,UsuarioTextBox.Text);        //Se abre el menu y se recibe el nombre del usuario que accedió
                         this.Hide();
-                        estanteria.Show();
+                        menu.Show();
                     }
                     else
                     {
