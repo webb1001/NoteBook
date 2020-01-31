@@ -37,8 +37,6 @@
             this.ModificarButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
             this.DerechaPanel = new System.Windows.Forms.Panel();
-            this.CentralPanel = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.BarraSuperiorPanel = new System.Windows.Forms.Panel();
             this.CerrarSesiónButton = new System.Windows.Forms.Button();
             this.CodigoLabel = new System.Windows.Forms.Label();
@@ -54,10 +52,10 @@
             this.MinimizarPictureBox = new System.Windows.Forms.PictureBox();
             this.CerrarPictureBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.CentroPanel = new System.Windows.Forms.Panel();
             this.FondoPanel.SuspendLayout();
             this.IzquierdaPanel.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.CentralPanel.SuspendLayout();
             this.BarraSuperiorPanel.SuspendLayout();
             this.IzquierdoSuperiorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsuarioPictureBox)).BeginInit();
@@ -69,10 +67,10 @@
             // 
             // FondoPanel
             // 
+            this.FondoPanel.Controls.Add(this.CentroPanel);
             this.FondoPanel.Controls.Add(this.IzquierdaPanel);
             this.FondoPanel.Controls.Add(this.panel2);
             this.FondoPanel.Controls.Add(this.DerechaPanel);
-            this.FondoPanel.Controls.Add(this.CentralPanel);
             this.FondoPanel.Controls.Add(this.BarraSuperiorPanel);
             this.FondoPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FondoPanel.Location = new System.Drawing.Point(0, 0);
@@ -130,9 +128,9 @@
             this.EliminarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.EliminarButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EliminarButton.Location = new System.Drawing.Point(200, 0);
+            this.EliminarButton.Location = new System.Drawing.Point(179, 0);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(138, 46);
+            this.EliminarButton.Size = new System.Drawing.Size(186, 46);
             this.EliminarButton.TabIndex = 2;
             this.EliminarButton.Text = "Eliminar cuaderno";
             this.EliminarButton.UseVisualStyleBackColor = false;
@@ -142,9 +140,9 @@
             this.ModificarButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
             this.ModificarButton.Dock = System.Windows.Forms.DockStyle.Right;
             this.ModificarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ModificarButton.Location = new System.Drawing.Point(338, 0);
+            this.ModificarButton.Location = new System.Drawing.Point(365, 0);
             this.ModificarButton.Name = "ModificarButton";
-            this.ModificarButton.Size = new System.Drawing.Size(203, 46);
+            this.ModificarButton.Size = new System.Drawing.Size(176, 46);
             this.ModificarButton.TabIndex = 1;
             this.ModificarButton.Text = "Modificar cuaderno";
             this.ModificarButton.UseVisualStyleBackColor = false;
@@ -156,7 +154,7 @@
             this.AgregarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AgregarButton.Location = new System.Drawing.Point(0, 0);
             this.AgregarButton.Name = "AgregarButton";
-            this.AgregarButton.Size = new System.Drawing.Size(200, 46);
+            this.AgregarButton.Size = new System.Drawing.Size(179, 46);
             this.AgregarButton.TabIndex = 0;
             this.AgregarButton.Text = "Agregar cuaderno";
             this.AgregarButton.UseVisualStyleBackColor = false;
@@ -170,27 +168,6 @@
             this.DerechaPanel.Name = "DerechaPanel";
             this.DerechaPanel.Size = new System.Drawing.Size(359, 577);
             this.DerechaPanel.TabIndex = 0;
-            // 
-            // CentralPanel
-            // 
-            this.CentralPanel.AutoScroll = true;
-            this.CentralPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.CentralPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CentralPanel.Controls.Add(this.label4);
-            this.CentralPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CentralPanel.Location = new System.Drawing.Point(0, 23);
-            this.CentralPanel.Name = "CentralPanel";
-            this.CentralPanel.Size = new System.Drawing.Size(900, 577);
-            this.CentralPanel.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "label4";
             // 
             // BarraSuperiorPanel
             // 
@@ -370,6 +347,15 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // CentroPanel
+            // 
+            this.CentroPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.CentroPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CentroPanel.Location = new System.Drawing.Point(200, 23);
+            this.CentroPanel.Name = "CentroPanel";
+            this.CentroPanel.Size = new System.Drawing.Size(341, 531);
+            this.CentroPanel.TabIndex = 3;
+            // 
             // MenuFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,8 +371,6 @@
             this.FondoPanel.ResumeLayout(false);
             this.IzquierdaPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.CentralPanel.ResumeLayout(false);
-            this.CentralPanel.PerformLayout();
             this.BarraSuperiorPanel.ResumeLayout(false);
             this.BarraSuperiorPanel.PerformLayout();
             this.IzquierdoSuperiorPanel.ResumeLayout(false);
@@ -417,7 +401,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox UsuarioPictureBox;
         private System.Windows.Forms.Label UsuarioLabel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button CerrarSesiónButton;
         private System.Windows.Forms.Label MisCuadernosLabel;
         private System.Windows.Forms.Button EliminarButton;
@@ -428,5 +411,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel CentroPanel;
     }
 }

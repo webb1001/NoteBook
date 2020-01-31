@@ -239,7 +239,7 @@ namespace Notebook
         }
         private void handlerComun_Click(object sender, EventArgs e)     //Metodo que permite usar el evento click en todos los cuadernos creados
         {
-            CentralPanel.Refresh();
+            CentroPanel.Controls.Clear();
             listaNotas.DeleteLista();
             AgregarButton.Text = "Agregar nota";
             EliminarButton.Text = "Eliminar nota";
@@ -250,7 +250,6 @@ namespace Notebook
             {
                 DibujarNotas(listaNotas.ConsultaNotas(i), i);
             }
-
         }
         public void CargarNotas(int idNota, int idCuaderno)
         {
@@ -292,8 +291,8 @@ namespace Notebook
         public void DibujarNotas(Nota nota, int conteo)      //Metodo que dibuja los cuadernos que posee el usuario 
         {
             Image notaImagen;
-            int x = 218;
-            int y = 15 + 100 * conteo;
+            int x = 0;
+            int y = 0 + 100 * conteo;
             Button portada = new Button();
             notaImagen = Image.FromFile("NotasBoton.jpg");
             portada.AutoSize = false;
@@ -309,8 +308,32 @@ namespace Notebook
             portada.FlatStyle = FlatStyle.Flat;
             portada.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             portada.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            portada.Click += new EventHandler(handlerComun_Click);
-            CentralPanel.Controls.Add(portada);
+            portada.Click += new EventHandler(handlerNotas_Click);
+            CentroPanel.Controls.Add(portada);
+        }
+        private void handlerNotas_Click(object sender, EventArgs e)     //Metodo que permite usar el evento click en todos los cuadernos creados
+        {
+            AbrirFormulario<EditorDeNotas>();
+        }
+        private void AbrirFormulario<TextoForm>() where TextoForm : Form, new()
+        {
+            Form editor;
+            editor = DerechaPanel.Controls.OfType<TextoForm>().FirstOrDefault(); //Busca en la colección el formulario
+            if(editor == null)
+            {
+                editor = new TextoForm();
+                editor.TopLevel = false;
+                //editor.FormBorderStyle = FormBorderStyle.None;
+                editor.Dock = DockStyle.Fill;
+                DerechaPanel.Controls.Add(editor);
+                DerechaPanel.Tag = editor;
+                editor.Show();
+                editor.BringToFront();
+            }
+            else
+            {
+                editor.BringToFront();
+            }
         }
     }
 }

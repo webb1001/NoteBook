@@ -20,9 +20,8 @@ namespace Notebook
         string[] campos = new string[47];       //Mediante el caracter " ° " separa el contenido de cadena
         char[] separador = { '°' };     //Almacena el caracter usado como separador
         int idCuaderno = 0;     //Revise el numero del cuaderno que va a ser eeditado
-        public EditorDeNotas(string nombreUsuario)
+        public EditorDeNotas()
         {
-            this.nombreUsuario = nombreUsuario;
             InitializeComponent();
         }
         public EditorDeNotas(string nombreUsuario,int idCuaderno)
