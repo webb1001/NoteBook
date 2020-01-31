@@ -58,6 +58,23 @@ namespace Notebook
         //        MessageBox.Show("Error" + en.Message);
         //    }
         //}
+
+        private bool InformacionEsValida()      //Verifica que todos los textbox contengan informacion
+        {
+            LimpiarErrorProvider();
+            bool esValida = true;
+            if (NombreTextBox.Text == "" || NombreTextBox.Text == "Nombre")
+            {
+                esValida = false;
+                GuardadoErrorProvider.SetError(NombreTextBox, "Debe especificar un nombre para el cuaderno");
+            }
+            if (CategoriaTextBox.Text == "" || CategoriaTextBox.Text == "CATEGORÍA")
+            {
+                esValida = false;
+                GuardadoErrorProvider.SetError(CategoriaTextBox, "Debe especificar una categoria para el cuaderno");
+            }
+            return esValida;
+        }
         private void GuardarButton_Click(object sender, EventArgs e)        //Crea un cuadernos con los datos agregados por el usuario
         {
             // if (InformacionEsValida())      //Verifica que todos los datos solicitados hayan sido ingresados
@@ -129,22 +146,7 @@ namespace Notebook
            // GuardadoToolTip.SetToolTip(NombreTextBox, "Ingresar un nombre para el cuaderno");   //Otorga instrucciones para el usuario
            // GuardadoToolTip.SetToolTip(CategoriaTextBox, "Ingresar una categoria para el cuaderno");    //Otorga instrucciones para el usuario
         }
-        private bool InformacionEsValida()      //Verifica que todos los textbox contengan informacion
-        {
-            LimpiarErrorProvider();
-            bool esValida = true;
-            if (NombreTextBox.Text == "")
-            {
-                esValida = false;
-                GuardadoErrorProvider.SetError(NombreTextBox, "Debe especificar un nombre para el cuaderno");
-            }
-            if (CategoriaTextBox.Text == "")
-            {
-                esValida = false;
-                GuardadoErrorProvider.SetError(CategoriaTextBox, "Debe especificar una categoria para el cuaderno");
-            }
-            return esValida;
-        }
+ 
         private void LimpiarErrorProvider()     //Limpia el errorProvider de los textBox
         {
             GuardadoErrorProvider.SetError(NombreTextBox, "");

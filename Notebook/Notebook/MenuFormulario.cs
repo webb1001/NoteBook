@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Notebook.UNA.MySql;
 using Notebook.UNA.Cuaderno;
+using Notebook.UNA.Nota;
 using MySql.Data.MySqlClient;
 
 namespace Notebook
@@ -17,6 +18,7 @@ namespace Notebook
     public partial class MenuFormulario : Form
     {
         ListaCuaderno listaCuaderno = new ListaCuaderno();
+        ListaNotas listaNotas = new ListaNotas();
         int idUsuario = 0;
         string nombreUsuario = "";
         Cuaderno cuaderno = new Cuaderno();
@@ -61,8 +63,8 @@ namespace Notebook
         {
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(100, 65, 164));
             e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
-          //  base.OnPaint(e);
-          //  ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
+            //  base.OnPaint(e);
+            //  ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
         private void CerrarPictureBox_Click(object sender, EventArgs e)
@@ -72,7 +74,7 @@ namespace Notebook
             {
                 Application.Exit();
             }
-                
+
             //Hacer message box de confirmar...
         }
 
@@ -97,7 +99,7 @@ namespace Notebook
         {
             MaximizarPictureBox.Visible = true;
             RestaurarPictureBox.Visible = false;
-            this.Size = new Size(sw,sh);
+            this.Size = new Size(sw, sh);
             this.Location = new Point(lx, ly);
         }
 
@@ -108,8 +110,8 @@ namespace Notebook
 
         private void BarraSuperiorPanel_MouseMove(object sender, MouseEventArgs e)
         {
-             ReleaseCapture();
-             SendMessage(this.Handle, 0x112, 0xf012, 0);
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void MinimizarPictureBox_Click(object sender, EventArgs e)
@@ -119,21 +121,29 @@ namespace Notebook
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-            CrearForm guardado = new CrearForm(idUsuario,nombreUsuario);        //Genera el formulario de creacion de cuadernos 
-            guardado.Show();        //Muestra el formularios de creacion de cuadernos
-            this.Hide();
+            if (AgregarButton.Text == "Agregar cuaderno")
+            {
+                CrearForm guardado = new CrearForm(idUsuario, nombreUsuario);        //Genera el formulario de creacion de cuadernos 
+                guardado.Show();        //Muestra el formularios de creacion de cuadernos
+                this.Hide();
+            }
+            else if (AgregarButton.Text == "Agregar nota")
+            {
+                CreacionNotas creacion = new CreacionNotas(idUsuario, nombreUsuario, Convert.ToInt32(AgregarButton.Tag));
+                creacion.Show();
+                this.Hide();
+            }
         }
 
         private void MenuFormulario_Load(object sender, EventArgs e)
         {
             UsuarioLabel.Text = nombreUsuario;
             AlgoCuadernos(idUsuario);
-            for(int i = 0; i < listaCuaderno.GetCountLista(); i++)
+            for (int i = 0; i < listaCuaderno.GetCountLista(); i++)
             {
-
-                DibujarCuadernos(listaCuaderno.ConsultaCuaderno(i),i);  
+                DibujarCuadernos(listaCuaderno.ConsultaCuaderno(i), i);
             }
-            
+
         }
 
         private void CerrarSesiónButton_Click(object sender, EventArgs e)
@@ -146,24 +156,27 @@ namespace Notebook
                 login.Show();
             }
         }
-        public void DibujarCuadernos(Cuaderno cuaderno,int conteo)      //Metodo que dibuja los cuadernos que posee el usuario 
+        public void DibujarCuadernos(Cuaderno cuaderno, int conteo)      //Metodo que dibuja los cuadernos que posee el usuario 
         {
             Image cuadernoImagen;
             int x = 0;
-            int y = 120+46*conteo;
+            int y = 0  + 46 * conteo;
             Button portada = new Button();
             cuadernoImagen = ColorCuaderno(cuaderno);
             portada.AutoSize = false;
             portada.Name = "CuadernoButton" + conteo.ToString();
             portada.Text = cuaderno.titulo;
-            portada.Width = 200;
+            portada.Width = 183;
             portada.Height = 46;
             portada.Left = x;
             portada.Top = y;
             portada.Image = cuadernoImagen;
+            portada.Tag = cuaderno.idCuaderno;
             portada.FlatStyle = FlatStyle.Flat;
+            portada.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            portada.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             portada.Click += new EventHandler(handlerComun_Click);
-            IzquierdaPanel.Controls.Add(portada);
+            InferiozIzquierdoPanel.Controls.Add(portada);
         }
         public void CargarCuadernos(int idCuaderno)
         {
@@ -226,14 +239,78 @@ namespace Notebook
         }
         private void handlerComun_Click(object sender, EventArgs e)     //Metodo que permite usar el evento click en todos los cuadernos creados
         {
-            for(int i = 0; i < listaCuaderno.GetCountLista(); i++)
+            CentralPanel.Refresh();
+            listaNotas.DeleteLista();
+            AgregarButton.Text = "Agregar nota";
+            EliminarButton.Text = "Eliminar nota";
+            ModificarButton.Text = "Modificar nota";
+            AgregarButton.Tag = ((Button)sender).Tag;
+            AlgoNotas(Convert.ToInt32(AgregarButton.Tag.ToString()));
+            for (int i = 0; i < listaNotas.GetCountNota(); i++)
             {
-                if (((Button)sender).Name == "CuadernoButton" + i.ToString())        //Si se hace click en el cuaderno 1, abre su contenido
-                {
-                    AgregarButton.Text = "Agregar nota";
-                    EliminarButton.Text = "Eliminar nota";
-                    ModificarButton.Text = "Modificar nota";
-                }
+                DibujarNotas(listaNotas.ConsultaNotas(i), i);
+            }
+
+        }
+        public void CargarNotas(int idNota, int idCuaderno)
+        {
+            string titulo = "";
+            string categoria = "";
+            string texto = "";
+            string fechaCreacion = "";
+            string fechaModificacion = "";
+            MySqlAccess acceso = new MySqlAccess();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT titulo, categoria, fecha_creacion, fecha_modificacion FROM Notas where id_nota = '{0}'", idNota));
+            var connection = acceso.GetConnection();
+            connection.Open();
+            command.Connection = connection;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                titulo = reader.GetString(0);
+                categoria = reader.GetString(1);
+                fechaCreacion = reader.GetString(2);
+                fechaModificacion = reader.GetString(3);
+            }
+            Nota nota = new Nota(idNota, idCuaderno, titulo, categoria, texto, fechaCreacion, fechaModificacion);
+            listaNotas.Agregar(nota);
+        }
+
+        public void AlgoNotas(int idCuaderno)
+        {
+            MySqlAccess acceso = new MySqlAccess();
+            MySqlCommand command = new MySqlCommand(string.Format("SELECT id_nota FROM Notas where cuaderno = '{0}'", idCuaderno));
+            var connection = acceso.GetConnection();
+            connection.Open();
+            command.Connection = connection;
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                CargarNotas(reader.GetInt32(0), idCuaderno);
             }
         }
+        public void DibujarNotas(Nota nota, int conteo)      //Metodo que dibuja los cuadernos que posee el usuario 
+        {
+            Image notaImagen;
+            int x = 218;
+            int y = 15 + 100 * conteo;
+            Button portada = new Button();
+            notaImagen = Image.FromFile("NotasBoton.jpg");
+            portada.AutoSize = false;
+            portada.Name = "CuadernoButton" + conteo.ToString();
+            portada.ForeColor = Color.White;
+            portada.Text = nota.titulo;
+            portada.Image = notaImagen;
+            portada.Tag = cuaderno.idCuaderno;
+            portada.Width = 300;
+            portada.Height = 85;
+            portada.Left = x;
+            portada.Top = y;
+            portada.FlatStyle = FlatStyle.Flat;
+            portada.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            portada.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            portada.Click += new EventHandler(handlerComun_Click);
+            CentralPanel.Controls.Add(portada);
+        }
+    }
 }

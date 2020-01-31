@@ -45,18 +45,18 @@
             this.Cancelarutton = new System.Windows.Forms.Button();
             this.AceptarButton = new System.Windows.Forms.Button();
             this.RegistroContenidoPanel = new System.Windows.Forms.Panel();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.RegistroErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.RegistroToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.RegistroFondoPanel = new System.Windows.Forms.Panel();
             this.OjoConfirmarButton = new System.Windows.Forms.Button();
             this.OjoContraseñaButton = new System.Windows.Forms.Button();
             this.MinimizarPictureBox = new System.Windows.Forms.PictureBox();
             this.CerrarPictureBox = new System.Windows.Forms.PictureBox();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.RegistroErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RegistroToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.RegistroFondoPanel = new System.Windows.Forms.Panel();
             this.RegistroContenidoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RegistroErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegistroErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ConfirmarLineShape
@@ -246,6 +246,7 @@
             this.AceptarButton.Name = "AceptarButton";
             this.AceptarButton.Size = new System.Drawing.Size(121, 39);
             this.AceptarButton.TabIndex = 7;
+            this.AceptarButton.Tag = "";
             this.AceptarButton.Text = "ACEPTAR";
             this.AceptarButton.UseVisualStyleBackColor = false;
             this.AceptarButton.Click += new System.EventHandler(this.AceptarButton_Click);
@@ -273,36 +274,6 @@
             this.RegistroContenidoPanel.Size = new System.Drawing.Size(408, 525);
             this.RegistroContenidoPanel.TabIndex = 0;
             this.RegistroContenidoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.ConfirmarLineShape,
-            this.ContraseñaLineShape,
-            this.UsuarioLineShape,
-            this.SegundoApellidoLineShape,
-            this.PrimerApellidoLineShape,
-            this.NombreLineShape});
-            this.shapeContainer2.Size = new System.Drawing.Size(408, 525);
-            this.shapeContainer2.TabIndex = 8;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // RegistroErrorProvider
-            // 
-            this.RegistroErrorProvider.ContainerControl = this;
-            // 
-            // RegistroFondoPanel
-            // 
-            this.RegistroFondoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
-            this.RegistroFondoPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RegistroFondoPanel.Location = new System.Drawing.Point(0, 0);
-            this.RegistroFondoPanel.Name = "RegistroFondoPanel";
-            this.RegistroFondoPanel.Size = new System.Drawing.Size(274, 525);
-            this.RegistroFondoPanel.TabIndex = 11;
-            this.RegistroFondoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // OjoConfirmarButton
             // 
@@ -354,6 +325,36 @@
             this.CerrarPictureBox.TabStop = false;
             this.CerrarPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.ConfirmarLineShape,
+            this.ContraseñaLineShape,
+            this.UsuarioLineShape,
+            this.SegundoApellidoLineShape,
+            this.PrimerApellidoLineShape,
+            this.NombreLineShape});
+            this.shapeContainer2.Size = new System.Drawing.Size(408, 525);
+            this.shapeContainer2.TabIndex = 8;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // RegistroErrorProvider
+            // 
+            this.RegistroErrorProvider.ContainerControl = this;
+            // 
+            // RegistroFondoPanel
+            // 
+            this.RegistroFondoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.RegistroFondoPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RegistroFondoPanel.Location = new System.Drawing.Point(0, 0);
+            this.RegistroFondoPanel.Name = "RegistroFondoPanel";
+            this.RegistroFondoPanel.Size = new System.Drawing.Size(274, 525);
+            this.RegistroFondoPanel.TabIndex = 11;
+            this.RegistroFondoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
             // RegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,9 +371,9 @@
             this.Load += new System.EventHandler(this.RegistroForm_Load);
             this.RegistroContenidoPanel.ResumeLayout(false);
             this.RegistroContenidoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RegistroErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RegistroErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }

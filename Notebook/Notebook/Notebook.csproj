@@ -71,6 +71,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreacionNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreacionNotas.Designer.cs">
+      <DependentUpon>CreacionNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +119,13 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="UNA\Nota\ListaNotas.cs" />
+    <Compile Include="UNA\Nota\Nota.cs" />
     <Compile Include="UNA\Usuario\ListaUsuario.cs" />
     <Compile Include="UNA\Usuario\Usuario.cs" />
+    <EmbeddedResource Include="CreacionNotas.resx">
+      <DependentUpon>CreacionNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditorDeNotas.resx">
       <DependentUpon>EditorDeNotas.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +336,8 @@
     <Content Include="bin\Debug\CuadernoRojoMenu.jpg" />
     <Content Include="bin\Debug\CuadernoVerdeMenu.jpg" />
     <Content Include="bin\Debug\CudernoCafeMenu.jpg" />
+    <Content Include="bin\Debug\NotasBoton.jpg" />
+    <None Include="bin\Debug\Imagenes\FondoGuardadoNotas.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

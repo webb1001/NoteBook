@@ -17,7 +17,6 @@ namespace Notebook.UNA.Cuaderno
         {
             return listaCuadernos;
         }
-
         public Cuaderno ConsultaCuaderno(int contadorCuadernos)
         {
             return listaCuadernos[contadorCuadernos];
@@ -26,22 +25,10 @@ namespace Notebook.UNA.Cuaderno
         {
             return listaCuadernos.Count();
         }
-        //public bool Verificar(string usuario, string contraseña)
-        //{
-        //    bool encontrado = false;
-        //    int i = 0;
-        //    while (encontrado == false && i < listaCuadernos.Count)
-        //    {
-        //        if (listaCuadernos[i].NombreUsuario == usuario && listaCuadernos[i].Contraseña == contraseña)
-        //        {
-        //            encontrado = true;
-        //        }
-        //        else
-        //        {
-        //            i++;
-        //        }
-        //    }
-        //    return encontrado;
-        //}
+
+        public int ConsultaId(int contador)
+        {
+            return listaCuadernos[contador].idCuaderno;
+        }
     }
 }

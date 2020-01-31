@@ -222,7 +222,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(435, 461);
+            this.shapeContainer1.Size = new System.Drawing.Size(435, 460);
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
@@ -250,7 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Notebook.Properties.Resources.FondoLibrosMorado;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(435, 461);
+            this.ClientSize = new System.Drawing.Size(435, 460);
             this.Controls.Add(this.MinimizarPictureBox);
             this.Controls.Add(this.CerrarPictureBox);
             this.Controls.Add(this.CancelarButton);
