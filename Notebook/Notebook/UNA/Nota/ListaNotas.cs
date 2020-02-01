@@ -25,7 +25,6 @@ namespace Notebook.UNA.Nota
         {
             return listaNotas.Count();
         }
-
         public void DeleteLista()
         {
             listaNotas.Clear();

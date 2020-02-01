@@ -53,6 +53,7 @@
             this.RegistroErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.RegistroToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.RegistroFondoPanel = new System.Windows.Forms.Panel();
+            this.CodigoRegistroLabel = new System.Windows.Forms.Label();
             this.RegistroContenidoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarPictureBox)).BeginInit();
@@ -186,7 +187,6 @@
             this.ContraseñaTextBox.Size = new System.Drawing.Size(251, 22);
             this.ContraseñaTextBox.TabIndex = 4;
             this.ContraseñaTextBox.Text = "CONTRASEÑA";
-            this.ContraseñaTextBox.TextChanged += new System.EventHandler(this.ContraseñaTextBox_TextChanged);
             this.ContraseñaTextBox.Enter += new System.EventHandler(this.ContraseñaTextBox_Enter);
             this.ContraseñaTextBox.Leave += new System.EventHandler(this.ContraseñaTextBox_Leave);
             // 
@@ -254,6 +254,7 @@
             // RegistroContenidoPanel
             // 
             this.RegistroContenidoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.RegistroContenidoPanel.Controls.Add(this.CodigoRegistroLabel);
             this.RegistroContenidoPanel.Controls.Add(this.OjoConfirmarButton);
             this.RegistroContenidoPanel.Controls.Add(this.OjoContraseñaButton);
             this.RegistroContenidoPanel.Controls.Add(this.MinimizarPictureBox);
@@ -355,6 +356,16 @@
             this.RegistroFondoPanel.TabIndex = 11;
             this.RegistroFondoPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
+            // CodigoRegistroLabel
+            // 
+            this.CodigoRegistroLabel.AutoSize = true;
+            this.CodigoRegistroLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(164)))));
+            this.CodigoRegistroLabel.Location = new System.Drawing.Point(319, 5);
+            this.CodigoRegistroLabel.Name = "CodigoRegistroLabel";
+            this.CodigoRegistroLabel.Size = new System.Drawing.Size(36, 13);
+            this.CodigoRegistroLabel.TabIndex = 12;
+            this.CodigoRegistroLabel.Text = "f2pw2";
+            // 
             // RegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,5 +414,6 @@
         private System.Windows.Forms.ToolTip RegistroToolTip;
         private System.Windows.Forms.Button OjoContraseñaButton;
         private System.Windows.Forms.Button OjoConfirmarButton;
+        private System.Windows.Forms.Label CodigoRegistroLabel;
     }
 }

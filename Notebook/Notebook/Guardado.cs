@@ -19,45 +19,26 @@ namespace Notebook
         string categoriaCuaderno = "";
         string colorCuaderno = "";
         string nombreUsuario = "";
-        public CrearForm(int idUsuario, string nombreUsuario)
+        int idCuaderno = 0;
+        List<string> historial;
+        public CrearForm(int idUsuario, string nombreUsuario, List<string> historial)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
             this.nombreUsuario = nombreUsuario;
+            this.historial = historial;
         }
-        //public void SobreescribirArchivo()      //Se reescribe el archivo para almacenar su contenido
-        //{
-        //    LeerArchivo();
-        //    File.Delete(nombreUsuario + ".txt");        //Elimina el contenido del archivo
-        //    StreamWriter escritor = new StreamWriter(nombreUsuario + ".txt");       //Permite escribir en el .txt
-        //    int idCuaderno = Convert.ToInt32(campos[1]);       //Recibe la cantidad de cuadernos creados
-        //    idCuaderno++;      //Se aumenta cantidad de cuadernos creados
-        //    campos[1] = Convert.ToString(idCuaderno);      //Actualiza la cantidad de cuadernos creados
-        //    for (int i = 0; i < campos.Length; i++)     //Reescribe todo el contenido del .txt
-        //    {
-        //        campos[i] = campos[i] + "°";
-        //        escritor.WriteLine(campos[i]);
-        //    }
-        //    escritor.Close();       //Cierra el escritor de archivos 
-        //}
-        //public void LeerArchivo()       //Permi leer todo el archivo .txt del usuario y otorga datos a las variables
-        //{
-        //    try
-        //    {
-        //        lector = File.OpenText(nombreUsuario + ".txt");
-        //        cadena = lector.ReadToEnd();
-        //        campos = cadena.Split(separador);
-        //        lector.Close();
-        //    }
-        //    catch (FileNotFoundException fe)
-        //    {
-        //        MessageBox.Show("Error" + fe.Message);
-        //    }
-        //    catch (Exception en)
-        //    {
-        //        MessageBox.Show("Error" + en.Message);
-        //    }
-        //}
+
+        public CrearForm(int idUsuario, string nombreUsuario, List<string> historial, bool modificar, int idCuaderno , string tituloCuaderno)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+            this.historial = historial;
+            this.idCuaderno = idCuaderno;
+            this.tituloCuaderno = tituloCuaderno;
+            GuardarButton.Text = "Modificar";
+        }
 
         private bool InformacionEsValida()      //Verifica que todos los textbox contengan informacion
         {
@@ -66,47 +47,44 @@ namespace Notebook
             if (NombreTextBox.Text == "" || NombreTextBox.Text == "Nombre")
             {
                 esValida = false;
-                GuardadoErrorProvider.SetError(NombreTextBox, "Debe especificar un nombre para el cuaderno");
+                GuardadoErrorProvider.SetError(NombreTextBox, "Debe especificar un nombre para el cuaderno.");
             }
-            if (CategoriaTextBox.Text == "" || CategoriaTextBox.Text == "CATEGORÍA")
+            if (CategoriaTextBox.Text == "" || CategoriaTextBox.Text == "Categoría")
             {
                 esValida = false;
-                GuardadoErrorProvider.SetError(CategoriaTextBox, "Debe especificar una categoria para el cuaderno");
+                GuardadoErrorProvider.SetError(CategoriaTextBox, "Debe especificar una categoria para el cuaderno.");
             }
             return esValida;
         }
         private void GuardarButton_Click(object sender, EventArgs e)        //Crea un cuadernos con los datos agregados por el usuario
         {
-            // if (InformacionEsValida())      //Verifica que todos los datos solicitados hayan sido ingresados
-            // {
-            // //    LeerArchivo();
-            //  //   SobreescribirArchivo();     //Actualiza el contador de cuadernos creados
-            //  //   escritor = File.AppendText(nombreUsuario + ".txt");
-            //     escritor.Write(NombreTextBox.Text + "°");       //Agrega el nombre de cuaderno creado
-            //     escritor.Write(CategoriaTextBox.Text + "°");        //Agrega la categoria al cuaderno creado
-            //     escritor.Write(IdentificarColor() + "°");       //Agrega un color al cuaderno creado
-            //     escritor.Close();       //Cierra el escritor de archivos
-            //     this.Hide();
-            ////     EditorDeNotas cuaderno = new EditorDeNotas(nombreUsuario);      //Abre el formulario de notas
-            // //    cuaderno.Show();
-            // }
-
+            MySqlAccess acceso = new MySqlAccess();
+            acceso.OpenConnection();
+            if (GuardarButton.Text == "Modificar") 
+            {
+                acceso.EjectSQL(string.Format("update Cuadernos set titulo = '{0}', categoria = '{1}', color = '{2}'  where id_cuaderno = '{3}'", NombreTextBox.Text, CategoriaTextBox.Text, IdentificarColor(), idCuaderno));
+                acceso.CloseConnection();
+                MessageBox.Show("Se ha modificado el cuaderno con éxito.");
+                historial.Add("Se modifico el cuaderno " + tituloCuaderno);
+                MenuFormulario form = new MenuFormulario(idUsuario, nombreUsuario, historial, false);
+                this.Close();
+                form.Show();
+            }
             tituloCuaderno = NombreTextBox.Text;
             categoriaCuaderno = CategoriaTextBox.Text;
             colorCuaderno = IdentificarColor();
             if (NombreTextBox.Text == "Nombre" && CategoriaTextBox.Text == "Categoría")
             {
                 InformacionEsValida();
-                MessageBox.Show("Faltan datos.");
             }
             else if (InformacionEsValida())
             {
-                MySqlAccess acceso = new MySqlAccess();
-                acceso.OpenConnection();
+                
                 acceso.EjectSQL(string.Format("insert into Cuadernos(usuario,titulo,categoria,color) values('{0}','{1}','{2}','{3}')",idUsuario, tituloCuaderno, categoriaCuaderno,colorCuaderno));
                 acceso.CloseConnection();
                 MessageBox.Show("Se ha creado el cuaderno con éxito.");
-                MenuFormulario form = new MenuFormulario(idUsuario,nombreUsuario);
+                historial.Add("Se creó el cuaderno " + tituloCuaderno);
+                MenuFormulario form = new MenuFormulario(idUsuario,nombreUsuario,historial,false);
                 this.Close();
                 form.Show();
             }
@@ -137,16 +115,10 @@ namespace Notebook
         private void CancelarButton_Click(object sender, EventArgs e)      //Cancela la creacion de cuadernos
         {
             this.Hide();
-            MenuFormulario menu = new MenuFormulario(idUsuario,nombreUsuario);
+            MenuFormulario menu = new MenuFormulario(idUsuario,nombreUsuario,historial,false);
             menu.Show();
         }
-        private void GuardadoForm_Load(object sender, EventArgs e)
-        {
-           // LeerArchivo();
-           // GuardadoToolTip.SetToolTip(NombreTextBox, "Ingresar un nombre para el cuaderno");   //Otorga instrucciones para el usuario
-           // GuardadoToolTip.SetToolTip(CategoriaTextBox, "Ingresar una categoria para el cuaderno");    //Otorga instrucciones para el usuario
-        }
- 
+
         private void LimpiarErrorProvider()     //Limpia el errorProvider de los textBox
         {
             GuardadoErrorProvider.SetError(NombreTextBox, "");
@@ -201,6 +173,11 @@ namespace Notebook
         private void MinimizarPictureBox_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Modificar()
+        {
+            
         }
     }
 }

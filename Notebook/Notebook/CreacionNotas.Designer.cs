@@ -31,14 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.TituloTextBox = new System.Windows.Forms.TextBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.CreadorNotasPanel = new System.Windows.Forms.Panel();
             this.CategoriaTextBox = new System.Windows.Forms.TextBox();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NotasErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CodigoCreadorNotasLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CreadorNotasPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NotasErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TituloTextBox
@@ -66,14 +70,6 @@
             this.shapeContainer1.TabIndex = 2;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 25;
-            this.lineShape1.X2 = 250;
-            this.lineShape1.Y1 = 75;
-            this.lineShape1.Y2 = 75;
-            // 
             // lineShape2
             // 
             this.lineShape2.Name = "lineShape2";
@@ -82,15 +78,24 @@
             this.lineShape2.Y1 = 121;
             this.lineShape2.Y2 = 121;
             // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 25;
+            this.lineShape1.X2 = 250;
+            this.lineShape1.Y1 = 75;
+            this.lineShape1.Y2 = 75;
+            // 
             // CreadorNotasPanel
             // 
             this.CreadorNotasPanel.BackgroundImage = global::Notebook.Properties.Resources.FondoGuardadoNotas2;
+            this.CreadorNotasPanel.Controls.Add(this.pictureBox1);
+            this.CreadorNotasPanel.Controls.Add(this.CodigoCreadorNotasLabel);
             this.CreadorNotasPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.CreadorNotasPanel.Location = new System.Drawing.Point(290, 0);
             this.CreadorNotasPanel.Name = "CreadorNotasPanel";
             this.CreadorNotasPanel.Size = new System.Drawing.Size(200, 246);
             this.CreadorNotasPanel.TabIndex = 0;
-            this.CreadorNotasPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CreadorNotasPanel_Paint);
             // 
             // CategoriaTextBox
             // 
@@ -141,6 +146,26 @@
             // 
             this.NotasErrorProvider.ContainerControl = this;
             // 
+            // CodigoCreadorNotasLabel
+            // 
+            this.CodigoCreadorNotasLabel.AutoSize = true;
+            this.CodigoCreadorNotasLabel.Location = new System.Drawing.Point(139, 7);
+            this.CodigoCreadorNotasLabel.Name = "CodigoCreadorNotasLabel";
+            this.CodigoCreadorNotasLabel.Size = new System.Drawing.Size(36, 13);
+            this.CodigoCreadorNotasLabel.TabIndex = 0;
+            this.CodigoCreadorNotasLabel.Text = "f5pw2";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Notebook.Properties.Resources.equisCerrar;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(181, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // CreacionNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,7 +182,10 @@
             this.Name = "CreacionNotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreacionNotas";
+            this.CreadorNotasPanel.ResumeLayout(false);
+            this.CreadorNotasPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NotasErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +202,7 @@
         private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.ErrorProvider NotasErrorProvider;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label CodigoCreadorNotasLabel;
     }
 }

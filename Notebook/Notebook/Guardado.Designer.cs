@@ -46,6 +46,7 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.CodigoGuardadoLabel = new System.Windows.Forms.Label();
             this.ColoresGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GuardadoErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarPictureBox)).BeginInit();
@@ -166,7 +167,7 @@
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 34);
             this.GuardarButton.TabIndex = 4;
-            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.Text = " Guardar";
             this.GuardarButton.UseVisualStyleBackColor = false;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
@@ -244,6 +245,17 @@
             this.lineShape1.Y1 = 80;
             this.lineShape1.Y2 = 80;
             // 
+            // CodigoGuardadoLabel
+            // 
+            this.CodigoGuardadoLabel.AutoSize = true;
+            this.CodigoGuardadoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CodigoGuardadoLabel.ForeColor = System.Drawing.Color.Black;
+            this.CodigoGuardadoLabel.Location = new System.Drawing.Point(349, 4);
+            this.CodigoGuardadoLabel.Name = "CodigoGuardadoLabel";
+            this.CodigoGuardadoLabel.Size = new System.Drawing.Size(36, 13);
+            this.CodigoGuardadoLabel.TabIndex = 8;
+            this.CodigoGuardadoLabel.Text = "f4pw2";
+            // 
             // CrearForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +263,7 @@
             this.BackgroundImage = global::Notebook.Properties.Resources.FondoLibrosMorado;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(435, 460);
+            this.Controls.Add(this.CodigoGuardadoLabel);
             this.Controls.Add(this.MinimizarPictureBox);
             this.Controls.Add(this.CerrarPictureBox);
             this.Controls.Add(this.CancelarButton);
@@ -263,7 +276,6 @@
             this.Name = "CrearForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Creacion de cuadernos";
-            this.Load += new System.EventHandler(this.GuardadoForm_Load);
             this.ColoresGroupBox.ResumeLayout(false);
             this.ColoresGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GuardadoErrorProvider)).EndInit();
@@ -292,5 +304,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label CodigoGuardadoLabel;
     }
 }

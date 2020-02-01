@@ -86,32 +86,11 @@ namespace Notebook.UNA.MySql
             return new MySqlConnection(ConnectionString);
         }
 
-        //public bool VerificarLogin(string usuario, string contraseña)
-        //{
-        //    MySqlCommand command = new MySqlCommand();
-        //    MySqlAccess acceso = new MySqlAccess();
-        //    command.Connection = acceso.GetConnection();
-        //    command.CommandText = "select *from Usuarios where nombre_usuario=@usuario and contraseña=@contraseña";
-        //    command.Parameters.AddWithValue("@nombre_usuario", usuario);
-        //    command.Parameters.AddWithValue("@contraseña", contraseña);
-        //    command.CommandType = CommandType.Text;
-        //    MySqlDataReader reader = command.ExecuteReader();
-        //    if (reader.HasRows)
-        //    {
-        //        acceso.CloseConnection();
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        acceso.CloseConnection();
-        //        return false;
-        //    }
-        //}
 
         public bool VerificarLogin(string usuario, string contraseña)
         {
             string pUsuario= "";
-            string pContraseña = ""; 
+            string pContraseña = "";
             MySqlCommand command = new MySqlCommand(string.Format("SELECT id_usuario, nombre_usuario, contraseña FROM Usuarios where nombre_usuario = '{0}' and contraseña = '{1}'", usuario, contraseña));
             var connection = GetConnection();
             connection.Open();
@@ -121,9 +100,9 @@ namespace Notebook.UNA.MySql
             {
                 idUsuario = reader.GetInt32(0);
                 pUsuario = reader.GetString(1);
-                pContraseña = reader.GetString(2);
+                pContraseña = (reader.GetString(2));
             }
-            if(pUsuario == usuario && pContraseña == contraseña)
+            if(pUsuario == usuario && pContraseña == (contraseña))
             {
                 
                 return true;
@@ -135,36 +114,10 @@ namespace Notebook.UNA.MySql
             }
         }
 
-        public void AlgoCuadernos(int idUsuario)
-        {
-            MySqlCommand command = new MySqlCommand(string.Format("SELECT id_cuaderno FROM Cuadernos where usuario = '{0}'", idUsuario));
-            var connection = GetConnection();
-            connection.Open();
-            command.Connection = connection;
-            MySqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                idUsuario = reader.GetInt32(0);
-          //      pUsuario = reader.GetString(1);
-          //      pContraseña = reader.GetString(2);
-            }
-        }
-
-        
-
         public int RetornaUsuario()
         {
             return idUsuario;
         }
 
-        //public bool VerificarLogin(string usuario, string contraseña)
-        //{
-        //    MySqlAccess acceso = new MySqlAccess();
-        //    acceso.ConnectionString = "server=localhost;database=NotebookDb;uid=root;pwd=mfml1603";
-        //    acceso.OpenConnection();
-        //    acceso.EjectSQL(string.Format("select *from Usuarios where nombre_usuario='{0}' and contraseña='{1}'", usuario, contraseña));
-        //    acceso.CloseConnection();
-        //    return true;
-        //}
     }
 }

@@ -85,13 +85,8 @@
     </Compile>
     <Compile Include="UNA\Cuaderno\Cuaderno.cs" />
     <Compile Include="UNA\Cuaderno\ListaCuaderno.cs" />
+    <Compile Include="UNA\Encriptar\Encriptar.cs" />
     <Compile Include="UNA\MySql\DbAccess.cs" />
-    <Compile Include="EditorDeNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditorDeNotas.Designer.cs">
-      <DependentUpon>EditorDeNotas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,12 +99,6 @@
     <Compile Include="Guardado.Designer.cs">
       <DependentUpon>Guardado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="UNA\MySql\MySqlAccess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,22 +110,14 @@
     </Compile>
     <Compile Include="UNA\Nota\ListaNotas.cs" />
     <Compile Include="UNA\Nota\Nota.cs" />
-    <Compile Include="UNA\Usuario\ListaUsuario.cs" />
-    <Compile Include="UNA\Usuario\Usuario.cs" />
     <EmbeddedResource Include="CreacionNotas.resx">
       <DependentUpon>CreacionNotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditorDeNotas.resx">
-      <DependentUpon>EditorDeNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Guardado.resx">
       <DependentUpon>Guardado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFormulario.resx">
       <DependentUpon>MenuFormulario.cs</DependentUpon>

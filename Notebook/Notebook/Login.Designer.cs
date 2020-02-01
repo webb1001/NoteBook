@@ -43,6 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.IconoLoginPictureBox = new System.Windows.Forms.PictureBox();
             this.VisibleButton = new System.Windows.Forms.Button();
+            this.CodigoLoginLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LoginErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IconoLoginPictureBox)).BeginInit();
@@ -179,6 +180,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // IconoLoginPictureBox
             // 
@@ -208,6 +210,16 @@
             this.VisibleButton.UseVisualStyleBackColor = false;
             this.VisibleButton.Click += new System.EventHandler(this.VisibleButton_Click);
             // 
+            // CodigoLoginLabel
+            // 
+            this.CodigoLoginLabel.AutoSize = true;
+            this.CodigoLoginLabel.ForeColor = System.Drawing.Color.Black;
+            this.CodigoLoginLabel.Location = new System.Drawing.Point(528, 6);
+            this.CodigoLoginLabel.Name = "CodigoLoginLabel";
+            this.CodigoLoginLabel.Size = new System.Drawing.Size(36, 13);
+            this.CodigoLoginLabel.TabIndex = 12;
+            this.CodigoLoginLabel.Text = "f1pw2";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +227,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(64)))), ((int)(((byte)(165)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.CodigoLoginLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.RegistrarseButton);
             this.Controls.Add(this.linkLabel1);
@@ -255,6 +268,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label CodigoLoginLabel;
     }
 }
 
